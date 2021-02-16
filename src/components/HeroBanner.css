@@ -1,0 +1,8 @@
+#home-banner {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0)),
+    url("../images/hero/hero-brick.jpg");
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-size: cover;
+  min-height: 60vh;
+}
