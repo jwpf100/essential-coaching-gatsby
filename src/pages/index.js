@@ -3,6 +3,8 @@ import React from 'react'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import HeroBanner from '../components/HeroBanner'
+import HomeAboutMeBlock from '../components/HomeAboutMeBlock'
+import HomeCoachingProcessBlock from '../components/HomeCoachingProcess'
 
 const IndexPage = () => (
   <Layout>
@@ -11,8 +13,8 @@ const IndexPage = () => (
     <HeroBanner />
 
     {/* <!-- xxxxxxxxxxxxxxxxxxx -->
-<!-- Initial text -->
-<!-- xxxxxxxxxxxxxxxxxxx --> */}
+    <!-- Initial text -->
+    <!-- xxxxxxxxxxxxxxxxxxx --> */}
     <section className="container-fluid">
       <div className="container pt-5">
         <div className="row justify-content-center align-items-center pb-3 pb-lg-5">
@@ -38,112 +40,11 @@ const IndexPage = () => (
       </div>
     </section>
 
-    {/* <!-- xxxxxxxxxxxxxxxx -->
-<!-- ABOUT ME -->
-<!-- xxxxxxxxxxxxxxxx --> */}
-
-    <section id=" about-me" className="bg-light container-fluid">
-      <div className="bg-light container d-flex flex-wrap justify-content-center align-items-center">
-        <div className="align-items-center">
-          <h2 className="col-12 text-center py-3 text-muted">
-            The Essential Coach
-          </h2>
-        </div>
-        <div className="row w-100 justify-content-center align-items-center pb-3 pb-lg-5">
-          <div className="col-12 col-lg-6 order-2 order-lg-1 d-flex flex-column px-0">
-            <p className="lead-mobile text-muted ">
-              I’m Nikki Thomas - I'm a career coach and a workplace
-              psychologist, having spent many years supporting organisations and
-              individuals through periods of change.
-            </p>
-            <p className="lead-mobile text-muted ">
-              I help individuals who want to grow and/or change their careers. I
-              offer coaching for a variety of challenges; helping people achieve
-              their goals, navigate feelings of anxiety and uncertainty, explore
-              different mindsets and perspectives, as well as helping people
-              find a new career or purpose.
-            </p>
-            <a
-              href="/aboutme"
-              type="button"
-              className="btn btn-outline-highlight text-muted align-self-center"
-            >
-              My Story
-            </a>
-          </div>
-          <div className="col-6 col-lg-5 offset-lg-1 order-1 order-lg-2">
-            <img
-              className="featurette-image img-fluid rounded-circle py-3 py-md-0"
-              src="./images/home/nikki-profile-comp.jpg"
-              alt="Nikki Thomas"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-
+    <HomeAboutMeBlock />
+    <HomeCoachingProcessBlock />
     {/* <!-- xxxxxxxxxxxxxxxx -->
 <!-- COACHING PROCESS -->
 <!-- xxxxxxxxxxxxxxxx --> */}
-
-    <section id="process" className="features-icons container-fluid">
-      <div className="container">
-        <div className="row justify-content-center">
-          <div className="col">
-            <h2 className="text-muted text-center py-3">
-              How we can work together
-            </h2>
-          </div>
-        </div>
-        <div className="row pb-3 pb-lg-5 justify-content-center text-center">
-          <div className="col-md-4">
-            <div className="features-icons-item mx-auto">
-              <div className="features-icons-icon d-flex">
-                <i className="icon-question m-auto text-highlight" />
-              </div>
-              <h3 className="text-muted">Discover</h3>
-              <p className="mb-0 text-center text-muted">
-                Get a better idea of what makes you tick. Get clear on where
-                you’re heading.
-              </p>
-            </div>
-          </div>
-          <div className="col-md-4">
-            <div className="features-icons-item mx-auto">
-              <div className="features-icons-icon d-flex">
-                <i className="icon-pencil m-auto text-highlight" />
-              </div>
-              <h3 className="text-muted">Design</h3>
-              <p className="mb-0 text-center text-muted">
-                Create a focused plan of action and a clear ‘how’ you’ll get
-                there.
-              </p>
-            </div>
-          </div>
-          <div className="col-md-4">
-            <div className="features-icons-item mx-auto">
-              <div className="features-icons-icon d-flex">
-                <i className="icon-rocket m-auto text-highlight" />
-              </div>
-              <h3 className="text-muted">Disrupt</h3>
-              <p className="mb-0 text-center text-muted">
-                Take action and be accountable for building positive habits to
-                achieve your goals.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className="d-flex justify-content-center ">
-          <a
-            type="button"
-            className="btn btn-outline-highlight text-muted text center  align-self-center mb-3"
-            href="/career-coaching"
-          >
-            How I can help
-          </a>
-        </div>
-      </div>
-    </section>
 
     {/* <!-- Testimonials --> */}
     <section className="container-fluid bg-light">

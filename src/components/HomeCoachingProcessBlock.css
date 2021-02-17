@@ -1,0 +1,14 @@
+.features-icons > .features-icons-item {
+  max-width: 20rem;
+}
+
+.features-icons-item > .features-icons-icon {
+  height: 7rem;
+}
+
+.features-icons-icon > i {
+  font-size: 4.5rem;
+}
+.features-icons > .features-icons-item:hover > .features-icons-icon > i {
+  font-size: 5rem;
+}
