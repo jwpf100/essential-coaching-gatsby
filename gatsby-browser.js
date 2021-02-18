@@ -6,5 +6,7 @@
 
 // You can delete this file if you're not using it
 
-import './node_modules/bootstrap/dist/css/bootstrap.min.css'
-import './node_modules/bootstrap/dist/js/bootstrap.min.js'
+// import './node_modules/bootstrap/dist/css/bootstrap.min.css'
+// import './node_modules/bootstrap/dist/js/bootstrap.min.js'
+import './src/scss/custom.scss'
+import './node_modules/bootstrap/js/dist/carousel'
