@@ -1,0 +1,31 @@
+// Import Pages SCSS
+
+@import "./components/_navbar";
+@import "./pages/_index";
+@import "./pages/_aboutme";
+@import "./pages/_contact";
+@import "./pages/_blogmain";
+@import "./pages/_blog1";
+@import "./pages/_career";
+@import "./components/_process-icons";
+
+//New Components
+@import "../components/HeroBanner.scss";
+
+//Import Fonts
+@import "./themes/_fonts";
+
+//Import Old components
+@import "./components/flipbox";
+@import "./components/_featurettes";
+@import "./components/_testimonials";
+@import "./components/_footer";
+
+//Bootstrapp Overrides
+
+@import "./themes/_bootstrap_overrides";
+@import "./base/_override";
+
+//Import Bootstrap
+
+@import "./vendors/_bootstrap";

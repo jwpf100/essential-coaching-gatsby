@@ -1,5 +1,4 @@
 import React from 'react'
-import './HeroBanner.css'
 import { useStaticQuery, graphql, Link } from 'gatsby'
 import Img from 'gatsby-image'
 
@@ -18,7 +17,7 @@ const HomeAboutMeBlock = () => {
   `)
 
   return (
-    <section id=" about-me" className="bg-light container-fluid">
+    <section id="about-me" className="bg-light container-fluid">
       <div className="bg-light container d-flex flex-wrap justify-content-center align-items-center">
         <div className="align-items-center">
           <h2 className="col-12 text-center py-3 text-muted">

@@ -10,12 +10,12 @@ import PropTypes from 'prop-types'
 
 import NavBar from './NavBar'
 import Footer from './Footer'
-import './layout.css'
+import './layout.scss'
 
 const Layout = ({ children }) => (
   <>
     <NavBar />
-    <main className="bumpdown p-0">{children}</main>
+    <main className="bumpdown">{children}</main>
     <Footer />
   </>
 )

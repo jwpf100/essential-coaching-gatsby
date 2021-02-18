@@ -18,8 +18,8 @@ const NavBar = () => {
 
   return (
     <header>
-      <div className="container-fluid">
-        <nav className="navbar navbar-expand-md fixed-top navbar-light bg-white">
+      <nav className="navbar navbar-expand-md fixed-top navbar-light bg-white">
+        <div className="container-fluid">
           <a className="navbar-brand d-flex align align-items-center" href="/">
             <div className="navLogo">
               <Img
@@ -41,7 +41,7 @@ const NavBar = () => {
             <span className="navbar-toggler-icon" />
           </button>
           <div className="collapse navbar-collapse" id="navbarsExampleDefault">
-            <ul className="navbar-nav ml-auto">
+            <ul className="navbar-nav ms-auto">
               <li className="nav-item">
                 <a className="nav-link" href="/">
                   Home
@@ -69,8 +69,8 @@ const NavBar = () => {
               </li>
             </ul>
           </div>
-        </nav>
-      </div>
+        </div>
+      </nav>
     </header>
   )
 }
