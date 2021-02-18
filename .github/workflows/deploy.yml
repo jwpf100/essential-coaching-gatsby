@@ -30,10 +30,8 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: eu-west-2
 
-
       - name: Deploy
-        run: aws s3 sync ./public s3://jwpf100-test-domain.com --size-only --exclude ".github/*" 
-        
-      - name: Invalidate Cloudfront CDN 
-        run: aws cloudfront create-invalidation --distribution-id=$CLOUDFRONT_DISTRIBUTION_ID --paths '/*'
-        env: CLOUDFRONT_DISTRIBUTION_ID: E1JGYKXIVLD290
+        run: aws s3 sync ./public s3://jwpf100-test-domain.com --size-only --exclude ".github/*"
+
+      - name: Invalidate Cloudfront CDN
+        run: aws cloudfront create-invalidation --distribution-id E1JGYKXIVLD290 --paths '/*'
