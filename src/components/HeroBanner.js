@@ -1,5 +1,4 @@
 import React from 'react'
-// import './HeroBanner.scss'
 
 const HeroBanner = () => (
   <section

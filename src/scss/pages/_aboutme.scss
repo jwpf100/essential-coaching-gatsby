@@ -1,3 +1,12 @@
+#about-cover {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0)),
+    url("../images/hero/hero-garden.jpg");
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-size: cover;
+  min-height: 60vh;
+}
+
 ul {
   list-style-type: circle;
 }
