@@ -32,8 +32,8 @@ const NavBar = () => {
           <button
             className="navbar-toggler"
             type="button"
-            data-toggle="collapse"
-            data-target="#navbarsExampleDefault"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarsExampleDefault"
             aria-controls="navbarsExampleDefault"
             aria-expanded="false"
             aria-label="Toggle navigation"
