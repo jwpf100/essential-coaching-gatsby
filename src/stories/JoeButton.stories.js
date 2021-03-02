@@ -4,7 +4,7 @@ import React from 'react'
 import JoeButton from '../components/JoeButton'
 
 export default {
-  title: 'Example/JoeButton',
+  title: 'Essential-Coaching/JoeButton',
   component: JoeButton,
 }
 
