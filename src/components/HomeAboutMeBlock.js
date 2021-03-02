@@ -41,7 +41,7 @@ const HomeAboutMeBlock = () => {
             <button
               href="/aboutme"
               type="button"
-              className="btn btn-outline-highlight text-muted align-self-center"
+              className="btn btn-outline-dark text-muted align-self-center"
             >
               My Story
             </button>
