@@ -1,10 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import './MainButton.scss'
 
-const JoeButton = ({ primary, label, href, bs }) => {
+const MainButton = ({ primary, label, href, bs }) => {
   const mode = primary
-    ? 'btn btn-outline-highlight text-muted'
-    : 'btn btn-outline-dark'
+    ? 'btn btn-outline-highlight mainbutton'
+    : 'btn btn-outline-gray'
 
   return (
     <button type="button" className={[mode, bs].join(' ')} href={href}>
@@ -13,9 +14,9 @@ const JoeButton = ({ primary, label, href, bs }) => {
   )
 }
 
-export default JoeButton
+export default MainButton
 
-JoeButton.propTypes = {
+MainButton.propTypes = {
   /**
    * Is this the principal call to action on the page?
    */
@@ -34,7 +35,7 @@ JoeButton.propTypes = {
   bs: PropTypes.string,
 }
 
-JoeButton.defaultProps = {
+MainButton.defaultProps = {
   primary: false,
   href: '/',
   bs: '',

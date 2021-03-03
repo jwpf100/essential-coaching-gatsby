@@ -1,14 +1,14 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react'
 
-import JoeButton from '../components/JoeButton'
+import FeaturedBlogPost from './FeaturedBlogPost'
 
 export default {
-  title: 'Essential-Coaching/JoeButton',
-  component: JoeButton,
+  title: 'Essential-Coaching/FeaturedBlogPost',
+  component: FeaturedBlogPost,
 }
 
-const Template = args => <JoeButton {...args} />
+const Template = args => <FeaturedBlogPost />
 
 export const Primary = Template.bind({})
 Primary.args = {

@@ -20,9 +20,8 @@ const IndexPage = () => (
       <div className="container pt-5">
         <div className="row justify-content-center align-items-center pb-3 pb-lg-5">
           <div className="col-12 d-flex flex-column">
-            <h3 className="text-muted  pb-3">
-              Joe Was Here Coaching for people who want to create a career they
-              love.
+            <h3 className="pb-3">
+              Coaching for people who want to create a career they love.
             </h3>
             <p className="lead-mobile text-muted ">
               How often do you give yourself the time and space to evaluate your

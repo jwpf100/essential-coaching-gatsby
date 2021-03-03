@@ -4,8 +4,9 @@ import { DateTime } from 'luxon'
 import PropTypes from 'prop-types'
 import Img from 'gatsby-image'
 
-const BlogHeader = ({ blogArray, imageUrl }) => {
-  const blogData = blogArray
+const FeaturedPost = ({ blogInfo, imageUrl }) => {
+  const blogData = blogInfo
+  const tagList = blogData.tags.map(tag => tag.name)
 
   const data = useStaticQuery(graphql`
     query {
@@ -20,34 +21,35 @@ const BlogHeader = ({ blogArray, imageUrl }) => {
   `)
 
   return (
-    <div className="container position-relative p-4 p-md-5 mb-4 text-white rounded bg-light d-flex flex-column flex-md-row">
-      <div className="order-md-1 col-md-6 d-flex justify-content-center align-items-center">
+    <div className="mb-4 mx-0 mx-2 h-100 g-0 border rounded overflow-auto flex-column shadow-sm h-md-250 justify-content-center align-items-center">
+      <div className="p-3 d-flex flex-column">
         <Img
-          className="w-75 h-auto bg-light rounded"
+          className="w-75 rounded-circle bg-white align-self-center mb-3"
           fluid={data.placeholderImage.childImageSharp.fluid}
         />
-      </div>
-      <div className="h-100 order-md-0 col-md-6 py-mid-4 d-flex flex-column align-items-start">
-        <h1 className="display-5 font-italic text-dark">{blogData.title}</h1>
-        <p className="lead text-dark my-3">{blogData.summary}</p>
-        <Link>Read More...</Link>
-        <i className="text-muted mb-0">
-          {DateTime.fromISO(blogData.post_date).toLocaleString(
-            DateTime.DATE_MED
-          )}
-        </i>
+        <h3 className="m-0 pb-2 text-center">{blogData.title}</h3>
+        <p className="m-0 pb-2">{blogData.summary}</p>
+        <Link className="m-0 pb-2">Read More...</Link>
+        <div className="mt-auto d-flex flex-row justify-content-between">
+          <i className="">{tagList.join(' / ')}</i>
+          <i className="">
+            {DateTime.fromISO(blogData.post_date).toLocaleString(
+              DateTime.DATE_MED
+            )}
+          </i>
+        </div>
       </div>
     </div>
   )
 }
 
-BlogHeader.propTypes = {
-  blogArray: PropTypes.array,
+FeaturedPost.propTypes = {
+  blogInfo: PropTypes.array,
   imageUrl: PropTypes.string,
 }
 
-BlogHeader.defaultProps = {
-  blogArray: {
+FeaturedPost.defaultProps = {
+  blogInfo: {
     post_date: '2021-01-23T09:50:12.472Z',
     tags: [
       {
@@ -78,4 +80,4 @@ BlogHeader.defaultProps = {
   imageUrl: 'src/images/blog/',
 }
 
-export default BlogHeader
+export default FeaturedPost
