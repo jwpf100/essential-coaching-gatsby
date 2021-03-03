@@ -4,6 +4,7 @@ import React from 'react'
 import Img from 'gatsby-image'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
+import HeroBanner from '../components/HeroBanner'
 
 export const AboutMeImage = graphql`
   fragment AboutMeImage on File {
@@ -27,40 +28,8 @@ export const ILoveImage = graphql`
   }
 `
 
-export const AboutMePage = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      compass: file(relativePath: { eq: "aboutme/compass-300.jpg" }) {
-        ...ILoveImage
-      }
-      head: file(relativePath: { eq: "aboutme/head-300.jpg" }) {
-        ...ILoveImage
-      }
-      portfolio: file(relativePath: { eq: "aboutme/portfolio-500.jpg" }) {
-        ...AboutMeImage
-      }
-      wtrek: file(relativePath: { eq: "aboutme/wtrek-600.jpg" }) {
-        ...AboutMeImage
-      }
-      timechange: file(relativePath: { eq: "aboutme/timechange-600.jpg" }) {
-        ...AboutMeImage
-      }
-      natural: file(relativePath: { eq: "aboutme/natural-600.jpg" }) {
-        ...AboutMeImage
-      }
-      wand: file(relativePath: { eq: "aboutme/wand-300.jpg" }) {
-        ...ILoveImage
-      }
-    }
-  `)
-
-  /* const query = graphql`
-    query {
-      image1: file(relativePath: { eq: "aboutme/compass-300.jpg" }) {
-        ...aboutMeImage
-      }
-    }
-  ` */
+export const AboutMePage = ({ data }) => {
+  const heroImage = data.projectHero.childImageSharp.fluid
 
   return (
     <Layout>
@@ -69,7 +38,7 @@ export const AboutMePage = () => {
       {/* <!-- xxxxxxxxxxxxxxxxxxx -->
     <!-- xxxxHERO IMAGExxxxx -->
     <!-- xxxxxxxxxxxxxxxxxxx --> */}
-      <section id="about-cover" className="bumpdown" />
+      <HeroBanner heroImage={heroImage} backgroundSide="left" />
       {/* <!-- About me initial text --> */}
       <div className="container-fluid d-flex flex-wrap justify-content-center align-items-center pt-5">
         <div className="row w-100 align-items-center">
@@ -261,3 +230,44 @@ export const AboutMePage = () => {
 }
 
 export default AboutMePage
+
+export const fluidImage = graphql`
+  fragment fluidImage on File {
+    childImageSharp {
+      fluid(maxWidth: 1600) {
+        ...GatsbyImageSharpFluid
+      }
+    }
+  }
+`
+
+// Select Images using pagequery below.
+
+export const pageQuery = graphql`
+  query {
+    projectHero: file(relativePath: { eq: "hero/hero-garden.jpg" }) {
+      ...fluidImage
+    }
+    compass: file(relativePath: { eq: "aboutme/compass-300.jpg" }) {
+      ...ILoveImage
+    }
+    head: file(relativePath: { eq: "aboutme/head-300.jpg" }) {
+      ...ILoveImage
+    }
+    portfolio: file(relativePath: { eq: "aboutme/portfolio-500.jpg" }) {
+      ...AboutMeImage
+    }
+    wtrek: file(relativePath: { eq: "aboutme/wtrek-600.jpg" }) {
+      ...AboutMeImage
+    }
+    timechange: file(relativePath: { eq: "aboutme/timechange-600.jpg" }) {
+      ...AboutMeImage
+    }
+    natural: file(relativePath: { eq: "aboutme/natural-600.jpg" }) {
+      ...AboutMeImage
+    }
+    wand: file(relativePath: { eq: "aboutme/wand-300.jpg" }) {
+      ...ILoveImage
+    }
+  }
+`
