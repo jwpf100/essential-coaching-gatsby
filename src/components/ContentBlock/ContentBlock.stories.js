@@ -1,14 +1,14 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react'
 
-import MainHeroBanner from './MainHeroBanner'
+import ContentBlock from './ContentBlock'
 
 export default {
-  title: 'Essential-Coaching/MainHeroBanner',
-  component: MainHeroBanner,
+  title: 'Essential-Coaching/ContentBlock',
+  component: ContentBlock,
 }
 
-const Template = args => <MainHeroBanner {...args} />
+const Template = args => <ContentBlock {...args} />
 
 export const Primary = Template.bind({})
 Primary.args = {
