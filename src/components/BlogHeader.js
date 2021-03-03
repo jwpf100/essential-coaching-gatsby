@@ -20,7 +20,7 @@ const BlogHeader = ({ blogArray, imageUrl }) => {
   `)
 
   return (
-    <div className="position-relative p-4 p-md-5 mb-4 text-white rounded bg-light d-flex flex-column flex-md-row">
+    <div className="container position-relative p-4 p-md-5 mb-4 text-white rounded bg-light d-flex flex-column flex-md-row">
       <div className="order-md-1 col-md-6 d-flex justify-content-center align-items-center">
         <Img
           className="w-75 h-auto bg-light rounded"

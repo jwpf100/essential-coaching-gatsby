@@ -1,18 +1,23 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import FeaturedPost from './FeaturedPost'
+import FeaturedBlogPost from './FeaturedBlogPost'
 
 const BlogList = ({ blogArray, imageUrl, onClick }) => (
   <>
-    <div className="row mb-2">
-      {blogArray.map(blog => (
-        <FeaturedPost
-          key={blog._id}
-          blogInfo={blog}
-          imageUrl={imageUrl}
-          onClick={onClick}
-        />
-      ))}
+    <div className="container">
+      <div className="row mb-2">
+        {blogArray.map(blog => (
+          <div className="col-md-6 p-0">
+            <FeaturedBlogPost
+              key={blog._id}
+              blogInfo={blog}
+              imageUrl={imageUrl}
+              onClick={onClick}
+            />
+          </div>
+        ))}
+      </div>
     </div>
   </>
 )
