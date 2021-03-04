@@ -2,6 +2,7 @@ import React from 'react'
 
 import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
+
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import HeroBanner from '../components/HeroBanner'
@@ -9,9 +10,13 @@ import HeroText from '../components/HeroText'
 import ContentText from '../components/ContentText'
 import ContentTextImage from '../components/ContentTextImage'
 import ContentBlock from '../components/ContentBlock'
-import HomeBlogBlock from '../components/HomeBlogBlock'
+
 import Carousel from '../components/Carousel'
-import InfoSection from '../components/InfoSection'
+import TriSection from '../components/TriSection'
+import InfoItem from '../components/InfoItem'
+import FeaturedBlogPost from '../components/FeaturedBlogPost'
+import inputData from '../pagesInput/index'
+import MainButton from '../components/MainButton'
 
 const IndexPage = ({ data }) => {
   // Define Images
@@ -21,28 +26,23 @@ const IndexPage = ({ data }) => {
   const testimonialImage2 = data.testimonialImage2.childImageSharp.fluid
   const testimonialImage3 = data.testimonialImage3.childImageSharp.fluid
 
-  const paragraphLead =
-    'Coaching for people who want to create a career they love.'
-  const paragraphLeadArray = [
-    'How often do you give yourself the time and space to evaluate your career? Perhaps you’re faced with a few options for where you could go next and need help deciding on the next challenge. Perhaps you want to get promoted but need a focused plan to get there. Perhaps you’ve got a great idea for a side hustle but haven’t had the confidence to go for it.',
-    'I can help you understand yourself better, get clear on where you want to go next and put your plan into action through practical, impactful coaching.',
-  ]
-  const aboutMeParagraphArray = [
-    "I’m Nikki Thomas - I'm a career coach and a workplace psychologist, having spent many years supporting organisations and individuals through periods of change.",
-    'I help individuals who want to grow and/or change their careers. I offer coaching for a variety of challenges; helping people achieve their goals, navigate feelings of anxiety and uncertainty, explore different mindsets and perspectives, as well as helping people find a new career or purpose.',
-  ]
-  const testimonialText1 =
-    'Nikki helped me to become aware of certain areas/traits that may have been holding me back and coached me through difficult situations, by suggesting practical and manageable ways to improve or develop those areas.'
-  const testimonialName1 = 'Deepa'
-  const testimonialJob1 = 'Health Psychologist'
-  const testimonialText2 =
-    'Nikki’s coaching was great; so useful in making me think more critically about my decisions/actions for the future. Nikki was really good at provoking thoughts about my direction that I hadn’t considered without the prompt.'
-  const testimonialName2 = 'Jess'
-  const testimonialJob2 = 'Nutritionist'
-  const testimonialText3 =
-    'After feeling stuck and overwhelmed when it came to my professional life, I worked with Nikki over a six-week period. The coaching experience made me feel accountable for my actions, and I was able to identify small steps within my power to control and quickly began to feel like I was moving forward and creating change.'
-  const testimonialName3 = 'Lucy'
-  const testimonialJob3 = 'Employee Engagement Consultant'
+  const {
+    paragraphLead,
+    paragraphLeadArray,
+    aboutMeParagraphArray,
+    testimonialText1,
+    testimonialName1,
+    testimonialJob1,
+    testimonialText2,
+    testimonialName2,
+    testimonialJob2,
+    testimonialText3,
+    testimonialName3,
+    testimonialJob3,
+    sectionTitle,
+    infoBlockArray,
+    blogSectionTitle,
+  } = inputData
 
   const testimonialArray = [
     {
@@ -65,56 +65,74 @@ const IndexPage = ({ data }) => {
     },
   ]
 
-  const sectionTitle = 'How we can work together'
-  const infoBlockArray = [
-    {
-      icon: 'icon-question',
-      header: 'Discover',
-      text:
-        'Get a better idea of what makes you tick. Get clear on where you’re heading.',
-    },
-    {
-      icon: 'icon-pencil',
-      header: 'Design',
-      text:
-        'Create a focused plan of action and a clear ‘how’ you’ll get there..',
-    },
-    {
-      icon: 'icon-question',
-      header: 'Disrupt',
-      text:
-        'Take action and be accountable for building positive habits to achieve your goals.',
-    },
-  ]
+  const blogPostArray = [{ item: 1 }, { item: 2 }, { item: 3 }]
 
   return (
     <Layout>
       <SEO title="Home" />
+      {/* ******** */}
       {/* Hero Banner Image */}
+      {/* ******** */}
       <HeroBanner heroImage={heroImage} backgroundSide="right">
         <HeroText headerText="Great Careers Start Here" />
       </HeroBanner>
+      {/* ******** */}
       {/* Lead Blurb */}
+      {/* ******** */}
       <ContentBlock>
-        <ContentText header={paragraphLead} paragraphs={paragraphLeadArray} />
+        <ContentText header={paragraphLead} paragraphs={paragraphLeadArray}>
+          <MainButton
+            bs="mx-auto d-block"
+            label="Book a free discovery call"
+            primary
+            href="/contact"
+          />
+        </ContentText>
       </ContentBlock>
+      {/* ******** */}
       {/* About Me Section */}
+      {/* ******** */}
       <ContentBlock color>
         <ContentTextImage
           image={profileImage}
           paragraphs={aboutMeParagraphArray}
-        />
+        >
+          <MainButton
+            bs="mx-auto d-block"
+            label="My Story"
+            primary
+            href="/aboutme"
+          />
+        </ContentTextImage>
       </ContentBlock>
+      {/* ******** */}
       {/* Coaching Process */}
+      {/* ******** */}
       <ContentBlock>
-        <InfoSection title={sectionTitle} items={infoBlockArray} />
+        <TriSection title={sectionTitle}>
+          {infoBlockArray.map(item => (
+            <InfoItem icon={item.icon} header={item.header} text={item.text} />
+          ))}
+        </TriSection>
       </ContentBlock>
+      {/* ******** */}
       {/* Carousel */}
+      {/* ******** */}
       <ContentBlock color>
         <Carousel slides={testimonialArray} />
       </ContentBlock>
-
-      <HomeBlogBlock />
+      {/* ******** */}
+      {/* Blog Taster */}
+      {/* ******** */}
+      <ContentBlock>
+        <TriSection title={blogSectionTitle}>
+          {blogPostArray.map(item => (
+            <div className="col-md-4">
+              <FeaturedBlogPost />
+            </div>
+          ))}
+        </TriSection>
+      </ContentBlock>
     </Layout>
   )
 }

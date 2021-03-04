@@ -1,14 +1,14 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react'
 
-import InfoSection from './InfoSection'
+import TriSection from './TriSection'
 
 export default {
-  title: 'Essential-Coaching/InfoSection',
-  component: InfoSection,
+  title: 'Essential-Coaching/TriSection',
+  component: TriSection,
 }
 
-const Template = args => <InfoSection {...args} />
+const Template = args => <TriSection {...args} />
 
 export const Primary = Template.bind({})
 Primary.args = {

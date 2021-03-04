@@ -2,23 +2,24 @@ import React from 'react'
 import styled from '@emotion/styled'
 import PropTypes from 'prop-types'
 
-const ContentText = ({ className, header, paragraphs }) => (
-  <div
-    className={[
-      className,
-      'row justify-content-center align-items-center',
-    ].join(' ')}
-  >
-    <div className="col-12 d-flex flex-column">
+const ContentText = ({ className, header, paragraphs, children }) => (
+  <div className={[className, 'row justify-content-center'].join(' ')}>
+    <div className="col-12 d-flex d-flex flex-column justify-content-around">
       <h3 className="pb-3">{header}</h3>
       {paragraphs.map(paragraph => (
         <p className="">{paragraph}</p>
       ))}
+      {children}
     </div>
   </div>
 )
 
-const StyledContentText = styled(ContentText)``
+const StyledContentText = styled(ContentText)`
+  p,
+  button {
+    font-size: 1.25rem;
+  }
+`
 
 export default StyledContentText
 
@@ -35,6 +36,10 @@ ContentText.propTypes = {
    * Emotion classname
    */
   className: PropTypes.string,
+  /**
+   * Additional elements to add
+   */
+  children: PropTypes.object,
 }
 
 ContentText.defaultProps = {

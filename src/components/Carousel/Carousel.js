@@ -5,7 +5,7 @@ import Img from 'gatsby-image'
 
 const Carousel = ({ className, slides }) => (
   <div className={className}>
-    <h2 className="testimonial-header  align-self-top py-3 pb-md-5 ">
+    <h2 className="testimonial-header align-self-top">
       What people are saying
     </h2>
     <div id="myCarousel" className="carousel">
