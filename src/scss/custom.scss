@@ -17,7 +17,7 @@
 @import "../components/HeroBanner.scss";
 
 //Import Old components
-@import "./components/flipbox";
+// @import "./components/_flipbox"; // Removed components
+@import "./components/_carousel"; // Include custom styling for carousel.
 @import "./components/_featurettes";
-@import "./components/_testimonials";
 @import "./components/_footer";
