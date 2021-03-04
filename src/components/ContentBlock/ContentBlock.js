@@ -7,7 +7,7 @@ const ContentBlock = ({ children, className, color }) => {
 
   return (
     <section className={['container-fluid', colorBG, className].join(' ')}>
-      <div className="container pt-5">{children}</div>
+      <div className="container py-5">{children}</div>
     </section>
   )
 }

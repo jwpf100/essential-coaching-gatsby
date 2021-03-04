@@ -3,7 +3,12 @@ import styled from '@emotion/styled'
 import PropTypes from 'prop-types'
 
 const ContentText = ({ className, header, paragraphs }) => (
-  <div className="row justify-content-center align-items-center pb-3 pb-lg-5">
+  <div
+    className={[
+      className,
+      'row justify-content-center align-items-center',
+    ].join(' ')}
+  >
     <div className="col-12 d-flex flex-column">
       <h3 className="pb-3">{header}</h3>
       {paragraphs.map(paragraph => (
