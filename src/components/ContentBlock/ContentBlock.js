@@ -12,7 +12,9 @@ const ContentBlock = ({ children, className, color }) => {
   )
 }
 
-const StyledContentBlock = styled(ContentBlock)``
+const StyledContentBlock = styled(ContentBlock)`
+  min-height: 60vh;
+`
 
 export default StyledContentBlock
 
