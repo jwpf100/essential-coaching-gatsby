@@ -28,7 +28,6 @@ const HeroBanner = styled(Banner)`
     props.backgroundSide === 'left' ? 'top left' : 'top right'};
   background-size: cover;
   min-height: 60vh;
-  background-color: gray;
 `
 
 export default HeroBanner

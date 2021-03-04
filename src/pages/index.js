@@ -9,9 +9,9 @@ import HeroText from '../components/HeroText'
 import ContentText from '../components/ContentText'
 import ContentTextImage from '../components/ContentTextImage'
 import ContentBlock from '../components/ContentBlock'
-import HomeCoachingProcessBlock from '../components/HomeCoachingProcess'
 import HomeBlogBlock from '../components/HomeBlogBlock'
 import Carousel from '../components/Carousel'
+import InfoSection from '../components/InfoSection'
 
 const IndexPage = ({ data }) => {
   // Define Images
@@ -65,6 +65,28 @@ const IndexPage = ({ data }) => {
     },
   ]
 
+  const sectionTitle = 'How we can work together'
+  const infoBlockArray = [
+    {
+      icon: 'icon-question',
+      header: 'Discover',
+      text:
+        'Get a better idea of what makes you tick. Get clear on where you’re heading.',
+    },
+    {
+      icon: 'icon-pencil',
+      header: 'Design',
+      text:
+        'Create a focused plan of action and a clear ‘how’ you’ll get there..',
+    },
+    {
+      icon: 'icon-question',
+      header: 'Disrupt',
+      text:
+        'Take action and be accountable for building positive habits to achieve your goals.',
+    },
+  ]
+
   return (
     <Layout>
       <SEO title="Home" />
@@ -83,11 +105,15 @@ const IndexPage = ({ data }) => {
           paragraphs={aboutMeParagraphArray}
         />
       </ContentBlock>
+      {/* Coaching Process */}
+      <ContentBlock>
+        <InfoSection title={sectionTitle} items={infoBlockArray} />
+      </ContentBlock>
       {/* Carousel */}
       <ContentBlock color>
         <Carousel slides={testimonialArray} />
       </ContentBlock>
-      <HomeCoachingProcessBlock />
+
       <HomeBlogBlock />
     </Layout>
   )
