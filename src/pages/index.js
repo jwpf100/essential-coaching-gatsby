@@ -180,6 +180,6 @@ IndexPage.propTypes = {
   data: PropTypes.object,
 }
 
-Carousel.defaultProps = {
+IndexPage.defaultProps = {
   data: {},
 }
