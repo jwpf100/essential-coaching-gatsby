@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import Img from 'gatsby-image'
 import MainButton from '../MainButton'
 
-const ContentTextImage = ({ className, image, paragraphs }) => (
+const ContentTextImage = ({ className, image, paragraphs, children }) => (
   <div className={className}>
     <div className="align-items-center">
       <h2 className="col-12 text-center">The Essential Coach</h2>
@@ -14,12 +14,7 @@ const ContentTextImage = ({ className, image, paragraphs }) => (
         {paragraphs.map(paragraph => (
           <p className="">{paragraph}</p>
         ))}
-        <MainButton
-          bs="mx-auto d-block"
-          label="My Story"
-          primary
-          href="/aboutme"
-        />
+        {children}
       </div>
       <div className="col-6 col-lg-5 offset-lg-1 order-1 order-lg-2 py-3">
         <Img
@@ -32,7 +27,12 @@ const ContentTextImage = ({ className, image, paragraphs }) => (
   </div>
 )
 
-const StyledContentTextImage = styled(ContentTextImage)``
+const StyledContentTextImage = styled(ContentTextImage)`
+  p,
+  button {
+    font-size: 1.25rem;
+  }
+`
 
 export default StyledContentTextImage
 
@@ -49,6 +49,10 @@ ContentTextImage.propTypes = {
    * Emotion classname
    */
   className: PropTypes.string,
+  /**
+   * Additional elements to add
+   */
+  children: PropTypes.object,
 }
 
 ContentTextImage.defaultProps = {

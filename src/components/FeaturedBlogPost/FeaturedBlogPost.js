@@ -21,7 +21,7 @@ const FeaturedPost = ({ blogInfo, imageUrl }) => {
   `)
 
   return (
-    <div className="mb-4 mx-0 mx-2 h-100 g-0 border rounded overflow-auto flex-column shadow-sm h-md-250 justify-content-center align-items-center">
+    <div className="mb-4 mx-0 mx-2 h-100 g-0 border-rounded overflow-auto flex-column shadow-sm h-md-250 justify-content-center align-items-center">
       <div className="p-3 d-flex flex-column">
         <Img
           className="w-75 rounded-circle bg-white align-self-center mb-3"
