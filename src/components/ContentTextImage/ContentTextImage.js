@@ -2,37 +2,48 @@ import React from 'react'
 import styled from '@emotion/styled'
 import PropTypes from 'prop-types'
 import Img from 'gatsby-image'
-import MainButton from '../MainButton'
 
-const ContentTextImage = ({ className, image, paragraphs, children }) => (
-  <div className={className}>
-    <div className="align-items-center">
-      <h2 className="col-12 text-center">The Essential Coach</h2>
-    </div>
-    <div className="row justify-content-center">
-      <div className="col-12 col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-around">
-        {paragraphs.map(paragraph => (
-          <p className="">{paragraph}</p>
-        ))}
+const ContentTextImage = ({
+  className,
+  image,
+  children,
+  imageSide,
+  xtraWide,
+}) => {
+  const columns = xtraWide ? 12 : 10
+
+  const textOrder =
+    imageSide === 'left'
+      ? `col-lg-${columns / 2} order-2 order-lg-2`
+      : `col-lg-${columns / 2} order-2 order-lg-1`
+  const imgOrder =
+    imageSide === 'left'
+      ? `col-lg-${columns / 2} order-1 order-lg-1`
+      : `col-lg-${columns / 2} order-1 order-lg-2`
+
+  return (
+    <div className={[className, 'row justify-content-center'].join(' ')}>
+      <div
+        className={[
+          'col-12 d-flex flex-column justify-content-center',
+          textOrder,
+        ].join(' ')}
+      >
         {children}
       </div>
-      <div className="col-6 col-lg-5 offset-lg-1 order-1 order-lg-2 py-3">
-        <Img
-          className="featurette-image img-fluid rounded-circle d-block"
-          fluid={image}
-          alt="Nikki Thomas"
-        />
+      <div
+        className={[
+          `col-10 d-lg-flex align-items-center mb-3 mb-lg-0 `,
+          imgOrder,
+        ].join(' ')}
+      >
+        <Img className="rounded-circle w-100 mx-auto" fluid={image} alt="" />
       </div>
     </div>
-  </div>
-)
+  )
+}
 
-const StyledContentTextImage = styled(ContentTextImage)`
-  p,
-  button {
-    font-size: 1.25rem;
-  }
-`
+const StyledContentTextImage = styled(ContentTextImage)``
 
 export default StyledContentTextImage
 
@@ -42,10 +53,6 @@ ContentTextImage.propTypes = {
    */
   image: PropTypes.object,
   /**
-   * Set background color of container.  Use either props.color or leave blank.
-   */
-  paragraphs: PropTypes.array,
-  /**
    * Emotion classname
    */
   className: PropTypes.string,
@@ -53,10 +60,17 @@ ContentTextImage.propTypes = {
    * Additional elements to add
    */
   children: PropTypes.object,
+  /**
+   * Additional elements to add
+   */
+  imageSide: PropTypes.oneOf('left', 'right', ''),
+  /**
+   * Additional elements to add
+   */
+  xtraWide: PropTypes.bool,
 }
 
 ContentTextImage.defaultProps = {
   image: {},
-  paragraphs: ['Paragraph 1', 'Paragraph 2'],
   className: '',
 }

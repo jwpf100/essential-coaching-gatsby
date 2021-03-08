@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { graphql, navigate } from 'gatsby'
+import { graphql, navigate, Link } from 'gatsby'
 import PropTypes from 'prop-types'
 
 import Layout from '../components/layout'
@@ -17,6 +17,9 @@ import InfoItem from '../components/InfoItem'
 import FeaturedBlogPost from '../components/FeaturedBlogPost'
 import inputData from '../pagesInput/index'
 import MainButton from '../components/MainButton'
+import TextHeader from '../components/TextHeader'
+import TextParagraph from '../components/TextParagraph'
+import TextLead from '../components/TextLead'
 
 const IndexPage = ({ data }) => {
   // Define Images
@@ -27,7 +30,7 @@ const IndexPage = ({ data }) => {
   const testimonialImage3 = data.testimonialImage3.childImageSharp.fluid
 
   const {
-    paragraphLead,
+    headerLead,
     paragraphLeadArray,
     aboutMeParagraphArray,
     testimonialText1,
@@ -80,11 +83,14 @@ const IndexPage = ({ data }) => {
       {/* Lead Blurb */}
       {/* ******** */}
       <ContentBlock>
-        <ContentText header={paragraphLead} paragraphs={paragraphLeadArray}>
+        <ContentText xtraWide>
+          <TextLead mainHeader={headerLead} alignHeader="left" />
+          <TextParagraph paragraphs={paragraphLeadArray} />
           <MainButton
             bs="mx-auto d-block"
             label="Book a free discovery call"
             primary
+            onClick={() => navigate('/aboutme/')}
             href="/contact"
           />
         </ContentText>
@@ -93,15 +99,18 @@ const IndexPage = ({ data }) => {
       {/* About Me Section */}
       {/* ******** */}
       <ContentBlock color>
+        <TextHeader mainHeader="The Essential Coach" />
         <ContentTextImage
           image={profileImage}
           paragraphs={aboutMeParagraphArray}
         >
+          <TextParagraph paragraphs={aboutMeParagraphArray} />
           <MainButton
             bs="mx-auto d-block"
             label="My Story"
             primary
-            onClick={() => navigate('/aboutme/')}
+            onClick={() => navigate('/about-me/')}
+            href="/aboutme/"
           />
         </ContentTextImage>
       </ContentBlock>
@@ -114,6 +123,9 @@ const IndexPage = ({ data }) => {
             <InfoItem icon={item.icon} header={item.header} text={item.text} />
           ))}
         </TriSection>
+        <Link className="" to="/aboutme/">
+          About Me
+        </Link>
       </ContentBlock>
       {/* ******** */}
       {/* Carousel */}
