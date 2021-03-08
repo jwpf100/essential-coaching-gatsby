@@ -1,14 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import './MainButton.scss'
+import { navigate } from 'gatsby'
 
-const MainButton = ({ primary, label, href, bs }) => {
+const MainButton = ({ primary, label, onClick, bs }) => {
   const mode = primary
     ? 'btn btn-outline-highlight mainbutton'
     : 'btn btn-outline-gray'
 
   return (
-    <button type="button" className={[mode, bs].join(' ')} href={href}>
+    <button type="button" className={[mode, bs].join(' ')} onClick={onClick}>
       {label}
     </button>
   )
@@ -28,7 +29,7 @@ MainButton.propTypes = {
   /**
    * href target
    */
-  href: PropTypes.string,
+  onClick: PropTypes.func,
   /**
    * additional bootstrap classes
    */
@@ -37,6 +38,6 @@ MainButton.propTypes = {
 
 MainButton.defaultProps = {
   primary: false,
-  href: '/',
+  onClick: () => navigate('/'),
   bs: '',
 }

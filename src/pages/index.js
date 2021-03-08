@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { graphql } from 'gatsby'
+import { graphql, navigate } from 'gatsby'
 import PropTypes from 'prop-types'
 
 import Layout from '../components/layout'
@@ -101,7 +101,7 @@ const IndexPage = ({ data }) => {
             bs="mx-auto d-block"
             label="My Story"
             primary
-            href="/aboutme"
+            onClick={() => navigate('/aboutme/')}
           />
         </ContentTextImage>
       </ContentBlock>
