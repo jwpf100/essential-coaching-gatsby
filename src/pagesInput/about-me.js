@@ -24,6 +24,16 @@ const inputData = {
   storyParagraphs4: [
     'Fast forward a few more years and I have found the right balance for a fulfilling career. I call it my ‘portfolio career’ – a mix of behavioural change consulting and, most importantly, the opportunity to coach individuals through change. I’m no longer questioning what I do for work – I enjoy it and appreciate the space it gives me to do the things that light me up. My mission now is to help others find the same career fulfilment.',
   ],
+  iconListHeader: 'Things I love',
+  iconListItemTitle1: 'Learning...',
+  iconListItemText1:
+    'Podcasts, books, lectures – I’m all about learning and developing.',
+  iconListItemTitle2: 'Travel...',
+  iconListItemText2:
+    'I’ve dived with sharks in Indonesia, hiked across a glacier in Patagonia, sampled a LOT of Argentinian wine, sailed from Panama to Colombia and spent weeks in the Peruvian jungle.',
+  iconListItemTitle3: 'Being creative...',
+  iconListItemText3:
+    'I love to write. I enjoy taking things I’ve learnt and reassembling it into a coherent story that might help others.',
 }
 
 export default inputData

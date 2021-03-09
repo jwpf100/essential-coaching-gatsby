@@ -14,12 +14,12 @@ const ContentTextImage = ({
 
   const textOrder =
     imageSide === 'left'
-      ? `col-lg-${columns / 2} order-2 order-lg-2`
-      : `col-lg-${columns / 2} order-2 order-lg-1`
+      ? `col-xl-${columns / 2} order-2 order-lg-2`
+      : `col-xl-${columns / 2} order-2 order-lg-1`
   const imgOrder =
     imageSide === 'left'
-      ? `col-lg-${columns / 2} order-1 order-lg-1`
-      : `col-lg-${columns / 2} order-1 order-lg-2`
+      ? `col-xl-${columns / 2} order-1 order-lg-1`
+      : `col-xl-${columns / 2} order-1 order-lg-2`
 
   return (
     <div className={[className, 'row justify-content-center'].join(' ')}>
@@ -33,7 +33,7 @@ const ContentTextImage = ({
       </div>
       <div
         className={[
-          `col-10 d-lg-flex align-items-center mb-3 mb-lg-0 `,
+          `col-10 d-xl-flex align-items-center mb-3 mb-xl-0 `,
           imgOrder,
         ].join(' ')}
       >

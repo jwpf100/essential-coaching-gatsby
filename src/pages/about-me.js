@@ -2,7 +2,6 @@ import React from 'react'
 import { graphql } from 'gatsby'
 
 import PropTypes from 'prop-types'
-import Img from 'gatsby-image'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import HeroBanner from '../components/HeroBanner'
@@ -13,6 +12,7 @@ import ContentText from '../components/ContentText'
 import ContentTextImage from '../components/ContentTextImage'
 import TextQuote from '../components/TextQuote'
 import inputData from '../pagesInput/about-me'
+import ContentIconList from '../components/ContentIconList'
 
 export const AboutMePage = ({ data }) => {
   const heroImage = data.projectHero.childImageSharp.fluid
@@ -20,6 +20,9 @@ export const AboutMePage = ({ data }) => {
   const image2 = data.timechange.childImageSharp.fluid
   const image3 = data.wtrek.childImageSharp.fluid
   const image4 = data.portfolio.childImageSharp.fluid
+  const icon1 = data.head.childImageSharp.fluid
+  const icon2 = data.compass.childImageSharp.fluid
+  const icon3 = data.wand.childImageSharp.fluid
 
   const {
     leadColorHeader,
@@ -35,6 +38,13 @@ export const AboutMePage = ({ data }) => {
     storyParagraphs3,
     storyTitle4,
     storyParagraphs4,
+    iconListHeader,
+    iconListItemTitle1,
+    iconListItemText1,
+    iconListItemTitle2,
+    iconListItemText2,
+    iconListItemTitle3,
+    iconListItemText3,
   } = inputData
 
   const storyArray = [
@@ -62,6 +72,24 @@ export const AboutMePage = ({ data }) => {
     },
   ]
 
+  const iconListArray = [
+    {
+      image: icon1,
+      title: iconListItemTitle1,
+      paragraphs: [iconListItemText1],
+    },
+    {
+      image: icon2,
+      title: iconListItemTitle2,
+      paragraphs: [iconListItemText2],
+    },
+    {
+      image: icon3,
+      title: iconListItemTitle3,
+      paragraphs: [iconListItemText3],
+    },
+  ]
+
   return (
     <Layout>
       <SEO title="Home" />
@@ -82,7 +110,26 @@ export const AboutMePage = ({ data }) => {
           <TextQuote paragraphs={leadQuote} />
         </ContentText>
       </ContentBlock>
-
+      {/* <!-- xxxxxxxxxxxxxxxxxxxxx -->
+      <!-- WHAT LIGHTS ME UP -->
+      <!-- xxxxxxxxxxxxxxxxxxxxx --> */}
+      <ContentBlock color>
+        <TextHeader
+          mainHeader={iconListHeader}
+          size="large"
+          alignHeader="center"
+        />
+        {iconListArray.map(item => (
+          <ContentIconList
+            image={item.image}
+            title={item.title}
+            paragraphs={item.paragraphs}
+          >
+            <TextHeader size="small" colorHeader={item.title} />
+            <TextParagraph paragraphs={item.paragraphs} bs="mb-0" small />
+          </ContentIconList>
+        ))}
+      </ContentBlock>
       {/* <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
     <!-- MY STORY-->
     <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx --> */}
@@ -102,68 +149,10 @@ export const AboutMePage = ({ data }) => {
               size="small"
               alignHeader="left"
             />
-            <TextParagraph paragraphs={item.paragraphs} />
+            <TextParagraph paragraphs={item.paragraphs} small />
           </ContentTextImage>
         ))}
       </ContentBlock>
-      {/* <!-- xxxxxxxxxxxxxxxxxxxxx -->
-      <!-- WHAT LIGHTS ME UP -->
-      <!-- xxxxxxxxxxxxxxxxxxxxx --> */}
-      <div className="container-fluid bg-secondary">
-        <div className="row">
-          <div className="col-lg-8 offset-lg-2 my-auto text-center">
-            <h2 className="col-lg-12 text-center text-highlight py-3">
-              <span className="text-muted">Things I love</span>
-            </h2>
-          </div>
-        </div>
-        <div className="row justify-content-center align-items-center py-3">
-          <div className=" col-3 col-sm-3 col-md-2 col-xl-1">
-            <Img
-              className="w-75 rounded-circle bg-white align-self-center mb-3"
-              fluid={data.head.childImageSharp.fluid}
-            />
-          </div>
-          <div className="col-9 col-sm-9 col-md-6 col-xl-6">
-            <h4 className="text-highlight">Learning...</h4>
-            <p className="text-muted">
-              Podcasts, books, lectures – I’m all about learning and developing.
-            </p>
-          </div>
-        </div>
-        <div className="row justify-content-center align-items-center py-3">
-          <div className="col-3 col-sm-3 col-md-2 col-xl-1">
-            <Img
-              className="w-75 rounded-circle bg-white align-self-center mb-3"
-              fluid={data.compass.childImageSharp.fluid}
-            />
-          </div>
-          <div className="col-9 col-sm-9 col-md-6 col-xl-6">
-            <h4 className="text-highlight">Travel...</h4>
-            <p className="text-muted">
-              I’ve dived with sharks in Indonesia, hiked across a glacier in
-              Patagonia, sampled a LOT of Argentinian wine, sailed from Panama
-              to Colombia and spent weeks in the Peruvian jungle.
-            </p>
-          </div>
-        </div>
-        <div className="row justify-content-center align-items-center pt-3 pb-5">
-          <div className="col-3 col-sm-3 col-md-2 col-xl-1">
-            <Img
-              className="w-75 rounded-circle bg-white align-self-center mb-3"
-              fluid={data.wand.childImageSharp.fluid}
-            />
-          </div>
-          <div className="col-9 col-sm-9 col-md-6 col-xl-6">
-            <h4 className="text-highlight">Being creative...</h4>
-            <p className="text-muted">
-              {' '}
-              I love to write. I enjoy taking things I’ve learnt and
-              reassembling it into a coherent story that might help others.
-            </p>
-          </div>
-        </div>
-      </div>
     </Layout>
   )
 }
