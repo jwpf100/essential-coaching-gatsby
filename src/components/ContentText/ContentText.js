@@ -2,17 +2,19 @@ import React from 'react'
 import styled from '@emotion/styled'
 import PropTypes from 'prop-types'
 
-const ContentText = ({ className, header, paragraphs, children }) => (
-  <div className={[className, 'row justify-content-center'].join(' ')}>
-    <div className="col-12 d-flex d-flex flex-column justify-content-around">
-      <h3 className="pb-3">{header}</h3>
-      {paragraphs.map(paragraph => (
-        <p className="">{paragraph}</p>
-      ))}
-      {children}
+const ContentText = ({ className, xtraWide, children }) => {
+  const colums = xtraWide ? 12 : 10
+
+  return (
+    <div className={[className, 'row justify-content-center'].join(' ')}>
+      <div
+        className={`col-xl-${colums} d-flex flex-column justify-content-around`}
+      >
+        {children}
+      </div>
     </div>
-  </div>
-)
+  )
+}
 
 const StyledContentText = styled(ContentText)`
   p,
@@ -27,11 +29,7 @@ ContentText.propTypes = {
   /**
    * Header Content
    */
-  header: PropTypes.string,
-  /**
-   * Set background color of container.  Use either props.color or leave blank.
-   */
-  paragraphs: PropTypes.array,
+  xtraWide: PropTypes.bool,
   /**
    * Emotion classname
    */
@@ -43,7 +41,7 @@ ContentText.propTypes = {
 }
 
 ContentText.defaultProps = {
-  header: 'Header 1',
-  paragraphs: ['Paragraph 1', 'Paragraph 2'],
+  xtraWide: false,
+  children: '',
   className: '',
 }
