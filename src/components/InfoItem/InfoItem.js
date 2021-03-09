@@ -2,25 +2,15 @@ import React from 'react'
 import styled from '@emotion/styled'
 import PropTypes from 'prop-types'
 
-const InfoItem = ({ className, icon, header, text }) => (
+const InfoItem = ({ className, header, text, children }) => (
   <div className="col-md-4 text-center">
-    <div className={['d-flex', className].join(' ')}>
-      <i className={[icon, 'm-auto text-highlight'].join(' ')} />
-    </div>
+    {children}
     <h3 className="">{header}</h3>
     <p className="">{text}</p>
   </div>
 )
 
-const StyledInfoItem = styled(InfoItem)`
-  height: 7rem;
-  i {
-    font-size: 4.5rem;
-    &:hover {
-      font-size: 5rem;
-    }
-  }
-`
+const StyledInfoItem = styled(InfoItem)``
 
 export default StyledInfoItem
 
@@ -28,7 +18,7 @@ InfoItem.propTypes = {
   /**
    * Content to go in container
    */
-  icon: PropTypes.string,
+  children: PropTypes.object,
   /**
    * Emotion classname
    */
@@ -45,7 +35,6 @@ InfoItem.propTypes = {
 }
 
 InfoItem.defaultProps = {
-  icon: 'icon-question',
   header: 'Disrupt',
   text:
     'Take action and be accountable for building positive habits to achieve your goals.',

@@ -20,6 +20,7 @@ import MainButton from '../components/MainButton'
 import TextHeader from '../components/TextHeader'
 import TextParagraph from '../components/TextParagraph'
 import TextLead from '../components/TextLead'
+import SimpleIcon from '../components/SimpleIcon'
 
 const IndexPage = ({ data }) => {
   // Define Images
@@ -103,6 +104,7 @@ const IndexPage = ({ data }) => {
         <ContentTextImage
           image={profileImage}
           paragraphs={aboutMeParagraphArray}
+          xtraWide
         >
           <TextParagraph paragraphs={aboutMeParagraphArray} />
           <MainButton
@@ -120,7 +122,9 @@ const IndexPage = ({ data }) => {
       <ContentBlock>
         <TriSection title={sectionTitle}>
           {infoBlockArray.map(item => (
-            <InfoItem icon={item.icon} header={item.header} text={item.text} />
+            <InfoItem header={item.header} text={item.text}>
+              <SimpleIcon icon={item.icon} />
+            </InfoItem>
           ))}
         </TriSection>
         <Link className="" to="/aboutme/">
@@ -160,6 +164,16 @@ export const fluidImage = graphql`
     }
   }
 `
+export const profileImageFragment = graphql`
+  fragment profileImage on File {
+    childImageSharp {
+      fluid(maxWidth: 500, quality: 100) {
+        ...GatsbyImageSharpFluid
+        ...GatsbyImageSharpFluidLimitPresentationSize
+      }
+    }
+  }
+`
 
 // Select Images using pagequery below.
 
@@ -169,7 +183,7 @@ export const pageQuery = graphql`
       ...fluidImage
     }
     profilePic: file(relativePath: { eq: "index/nikki-profile-comp.jpg" }) {
-      ...fluidImage
+      ...profileImage
     }
     testimonialImage1: file(
       relativePath: { eq: "testimonials/deepa-square-300.jpg" }

@@ -2,7 +2,7 @@ import React from 'react'
 import styled from '@emotion/styled'
 import PropTypes from 'prop-types'
 
-const TextParagraph = ({ className, paragraphs, bs }) =>
+const TextParagraph = ({ className, paragraphs, bs, small }) =>
   paragraphs.map(paragraph => (
     <p className={[className, bs].join(' ')}>{paragraph}</p>
   ))
