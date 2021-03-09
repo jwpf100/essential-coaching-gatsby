@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import Img from 'gatsby-image'
 
 import PropTypes from 'prop-types'
 import Layout from '../components/layout'
@@ -13,6 +14,9 @@ import ContentTextImage from '../components/ContentTextImage'
 import TextQuote from '../components/TextQuote'
 import inputData from '../pagesInput/about-me'
 import ContentIconList from '../components/ContentIconList'
+import ContentIconListText from '../components/ContentIconListText'
+import ContentIconListImg from '../components/ContentIconListImg'
+import ContentIconListIcon from '../components/ContentIconListIcon'
 
 export const AboutMePage = ({ data }) => {
   const heroImage = data.projectHero.childImageSharp.fluid
@@ -75,16 +79,19 @@ export const AboutMePage = ({ data }) => {
   const iconListArray = [
     {
       image: icon1,
+      icon: 'icon-question',
       title: iconListItemTitle1,
       paragraphs: [iconListItemText1],
     },
     {
       image: icon2,
+      icon: 'icon-question',
       title: iconListItemTitle2,
       paragraphs: [iconListItemText2],
     },
     {
       image: icon3,
+      icon: 'icon-question',
       title: iconListItemTitle3,
       paragraphs: [iconListItemText3],
     },
@@ -121,15 +128,22 @@ export const AboutMePage = ({ data }) => {
         />
         {iconListArray.map(item => (
           <ContentIconList
-            image={item.image}
-            title={item.title}
-            paragraphs={item.paragraphs}
-          >
-            <TextHeader size="small" colorHeader={item.title} />
-            <TextParagraph paragraphs={item.paragraphs} bs="mb-0" small />
-          </ContentIconList>
+            childrenImage={
+              <Img
+                className="w-75 rounded-circle bg-white"
+                fluid={item.image}
+              />
+            }
+            childrenText={
+              <>
+                <TextHeader size="small" colorHeader={item.title} />
+                <TextParagraph paragraphs={item.paragraphs} bs="mb-0" small />
+              </>
+            }
+          />
         ))}
       </ContentBlock>
+
       {/* <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
     <!-- MY STORY-->
     <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx --> */}

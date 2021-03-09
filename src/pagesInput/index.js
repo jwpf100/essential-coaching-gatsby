@@ -35,7 +35,7 @@ const inputData = {
         'Create a focused plan of action and a clear ‘how’ you’ll get there..',
     },
     {
-      icon: 'icon-question',
+      icon: 'icon-rocket',
       header: 'Disrupt',
       text:
         'Take action and be accountable for building positive habits to achieve your goals.',
