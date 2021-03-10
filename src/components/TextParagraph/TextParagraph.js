@@ -2,10 +2,17 @@ import React from 'react'
 import styled from '@emotion/styled'
 import PropTypes from 'prop-types'
 
-const TextParagraph = ({ className, paragraphs, bs, small }) =>
-  paragraphs.map(paragraph => (
-    <p className={[className, bs].join(' ')}>{paragraph}</p>
-  ))
+const TextParagraph = ({ className, paragraphs, bs, small }) => (
+  <>
+    {Array.isArray(paragraphs) ? (
+      paragraphs.map(paragraph => (
+        <p className={[className, bs].join(' ')}>{paragraph}</p>
+      ))
+    ) : (
+      <p className={[className, bs].join(' ')}>{paragraphs}</p>
+    )}
+  </>
+)
 
 const StyledTextParagraph = styled(TextParagraph)`
   font-size: ${props => (props.small ? '1rem' : '1.25rem')};

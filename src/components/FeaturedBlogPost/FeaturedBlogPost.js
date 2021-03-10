@@ -1,12 +1,15 @@
 import React from 'react'
 import { useStaticQuery, graphql, Link } from 'gatsby'
-import { DateTime } from 'luxon'
 import PropTypes from 'prop-types'
-import Img from 'gatsby-image'
+import styled from '@emotion/styled'
+import BlogPostImage from '../BlogPostImage'
+import BlogPostFooter from '../BlogPostFooter'
+import TextHeader from '../TextHeader'
+import TextParagraph from '../TextParagraph'
 
 const FeaturedPost = ({ blogInfo, imageUrl }) => {
   const blogData = blogInfo
-  const tagList = blogData.tags.map(tag => tag.name)
+  const tagList = blogData.tags.map(tag => tag.name).join(' / ')
 
   const data = useStaticQuery(graphql`
     query {
@@ -20,28 +23,28 @@ const FeaturedPost = ({ blogInfo, imageUrl }) => {
     }
   `)
 
+  const image1 = data.placeholderImage.childImageSharp.fluid
+
   return (
-    <div className="mb-4 mx-0 mx-2 h-100 g-0 border-rounded overflow-auto flex-column shadow-sm h-md-250 justify-content-center align-items-center">
-      <div className="p-3 d-flex flex-column">
-        <Img
-          className="w-75 rounded-circle bg-white align-self-center mb-3"
-          fluid={data.placeholderImage.childImageSharp.fluid}
+    <div className="h-100 border-rounded shadow-sm d-flex flex-wrap px-3 pb-3">
+      <div className="w-100">
+        <BlogPostImage image={image1} />
+        <TextHeader
+          size="medium"
+          mainHeader={blogData.title}
+          alignHeader="center"
         />
-        <h3 className="m-0 pb-2 text-center">{blogData.title}</h3>
-        <p className="m-0 pb-2">{blogData.summary}</p>
-        <Link className="m-0 pb-2">Read More...</Link>
-        <div className="mt-auto d-flex flex-row justify-content-between">
-          <i className="">{tagList.join(' / ')}</i>
-          <i className="">
-            {DateTime.fromISO(blogData.post_date).toLocaleString(
-              DateTime.DATE_MED
-            )}
-          </i>
-        </div>
+        <TextParagraph paragraphs={blogData.summary} small />
+        <Link className="">Read More...</Link>
+      </div>
+      <div className="w-100 d-flex align-items-end">
+        <BlogPostFooter tagList={tagList} post_date={blogData.post_date} />
       </div>
     </div>
   )
 }
+
+const StyledBlogPost = styled(FeaturedPost)``
 
 FeaturedPost.propTypes = {
   blogInfo: PropTypes.array,
@@ -80,4 +83,4 @@ FeaturedPost.defaultProps = {
   imageUrl: 'src/images/blog/',
 }
 
-export default FeaturedPost
+export default StyledBlogPost
