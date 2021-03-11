@@ -1,6 +1,7 @@
 const inputData = {
   blogArray: [
     {
+      link: 'what-exactly-is-career-coaching',
       post_date: '2021-01-25T12:53:12.237Z',
       tags: [{ _id: '600af596f3ac8621ebb6abe7', name: 'Career', __v: 0 }],
       status: 'Published',
@@ -24,6 +25,7 @@ const inputData = {
       __v: 0,
     },
     {
+      link: 'what-kind-of-coach-do-i-need',
       post_date: '2021-01-25T12:53:12.237Z',
       tags: [{ _id: '600af596f3ac8621ebb6abe7', name: 'Career', __v: 0 }],
       status: 'Published',
@@ -47,6 +49,7 @@ const inputData = {
       __v: 0,
     },
     {
+      link: 'why-do-i-need-a-careers-coach',
       post_date: '2021-01-25T12:53:12.237Z',
       tags: [{ _id: '600af596f3ac8621ebb6abe7', name: 'Career', __v: 0 }],
       status: 'Published',

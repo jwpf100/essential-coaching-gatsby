@@ -52,7 +52,7 @@ const BlogHomePage = ({ data }) => {
               <FeaturedBlogPost
                 key={blog._id}
                 blogInfo={blog}
-                image={`blog/${blog.image_filename}.png`}
+                src={`blog/${blog.image_filename}.png`}
               />
             ))}
           </BlogPostContainer>
@@ -64,7 +64,7 @@ const BlogHomePage = ({ data }) => {
               <FeaturedBlogPost
                 key={blog._id}
                 blogInfo={blog}
-                image={`blog/${blog.image_filename}.png`}
+                src={`blog/${blog.image_filename}.png`}
               />
             ))}
           </BlogPostContainer>

@@ -1,13 +1,13 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import styled from '@emotion/styled'
 import BlogPostImage from '../BlogPostImage'
 import BlogPostFooter from '../BlogPostFooter'
 import TextHeader from '../TextHeader'
 import TextParagraph from '../TextParagraph'
+import TextLink from '../TextLink'
 
-const FeaturedPost = ({ blogInfo, image }) => {
+const FeaturedPost = ({ blogInfo, image, src }) => {
   const blogData = blogInfo
   const tagList = blogData.tags.map(tag => tag.name).join(' / ')
 
@@ -15,19 +15,20 @@ const FeaturedPost = ({ blogInfo, image }) => {
     <div className="h-100 border-rounded shadow-sm d-flex flex-wrap px-3 pb-3">
       <div className="w-100">
         <div className="d-flex justify-content-center">
-          <BlogPostImage image={image} />
+          <BlogPostImage image={image} src={src} />
         </div>
+        <BlogPostFooter tagList={tagList} post_date={blogData.post_date} />
         <TextHeader
           size="medium"
           mainHeader={blogData.title}
-          alignHeader="center"
+          alignHeader="left"
         />
         <TextParagraph paragraphs={blogData.summary} small />
-        <Link className="">Read More...</Link>
+        <TextLink to={blogData.link} text="Read more..." small />
       </div>
-      <div className="w-100 d-flex align-items-end">
+      {/* <div className="w-100 d-flex align-items-end">
         <BlogPostFooter tagList={tagList} post_date={blogData.post_date} />
-      </div>
+      </div> */}
     </div>
   )
 }
@@ -37,6 +38,7 @@ const StyledBlogPost = styled(FeaturedPost)``
 FeaturedPost.propTypes = {
   blogInfo: PropTypes.array,
   image: PropTypes.object,
+  src: PropTypes.string,
 }
 
 FeaturedPost.defaultProps = {

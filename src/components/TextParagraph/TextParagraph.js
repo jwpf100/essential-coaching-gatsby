@@ -2,14 +2,18 @@ import React from 'react'
 import styled from '@emotion/styled'
 import PropTypes from 'prop-types'
 
-const TextParagraph = ({ className, paragraphs, bs, small }) => (
+const TextParagraph = ({ className, paragraphs, children, bs, small }) => (
   <>
     {Array.isArray(paragraphs) ? (
       paragraphs.map(paragraph => (
-        <p className={[className, bs].join(' ')}>{paragraph}</p>
+        <p className={[className, bs].join(' ')}>
+          {paragraph} {children}
+        </p>
       ))
     ) : (
-      <p className={[className, bs].join(' ')}>{paragraphs}</p>
+      <p className={[className, bs].join(' ')}>
+        {paragraphs} {children}
+      </p>
     )}
   </>
 )
@@ -26,6 +30,10 @@ TextParagraph.propTypes = {
    */
   className: PropTypes.string,
   /**
+   * Header Content
+   */
+  children: PropTypes.object,
+  /**
    * Set background color of container.  Use either props.color or leave blank.
    */
   paragraphs: PropTypes.array,
@@ -41,6 +49,5 @@ TextParagraph.propTypes = {
 
 TextParagraph.defaultProps = {
   className: '',
-  paragraphs: 'Example Main Header Text',
   bs: '',
 }
