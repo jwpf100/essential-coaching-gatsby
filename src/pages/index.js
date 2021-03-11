@@ -19,7 +19,7 @@ import inputData from '../pagesInput/index'
 import MainButton from '../components/MainButton'
 import TextHeader from '../components/TextHeader'
 import TextParagraph from '../components/TextParagraph'
-import TextLead from '../components/TextLead'
+import TextLead from '../components/TextLink'
 import SimpleIcon from '../components/SimpleIcon'
 
 const IndexPage = ({ data }) => {
@@ -127,9 +127,6 @@ const IndexPage = ({ data }) => {
             </InfoItem>
           ))}
         </TriSection>
-        <Link className="" to="/aboutme/">
-          About Me
-        </Link>
       </ContentBlock>
       {/* ******** */}
       {/* Carousel */}
