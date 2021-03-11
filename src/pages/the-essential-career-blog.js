@@ -25,9 +25,6 @@ const BlogHomePage = ({ data }) => {
       return d - c
     })
 
-  const blog2 = 'blog/blog3.png'
-  // image_filename
-
   // Currently using fixed date, will add either a source plugin https://www.gatsbyjs.com/docs/creating-a-source-plugin/ or reference API in future
 
   useEffect(() => {

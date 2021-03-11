@@ -127,9 +127,6 @@ const IndexPage = ({ data }) => {
             </InfoItem>
           ))}
         </TriSection>
-        <Link className="" to="/aboutme/">
-          About Me
-        </Link>
       </ContentBlock>
       {/* ******** */}
       {/* Carousel */}

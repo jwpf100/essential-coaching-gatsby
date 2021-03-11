@@ -11,10 +11,10 @@ import ContentSpacer from '../components/ContentSpacer'
 import TextLink from '../components/TextLink'
 
 const { blogArray } = inputData
-const blogPostNo = 0
+const blogPostNo = 2
 const blog = blogArray[blogPostNo]
 
-const BlogFirstPage = ({ data }) => {
+const BlogFirstPage = () => {
   const tagList = blog.tags.map(tag => tag.name).join(' / ')
   return (
     <Layout>
@@ -27,7 +27,7 @@ const BlogFirstPage = ({ data }) => {
           <div dangerouslySetInnerHTML={{ __html: blog.body }} />
         </TextParagraph>
         <ContentSpacer bs="pb-3 pb-lg-5" />
-        <TextLink to="/the-essential-career-blog/" text="Back to blog home" />
+        <TextLink to="the-essential-career-blog" text="Back to blog home" />
       </ContentBlock>
     </Layout>
   )
