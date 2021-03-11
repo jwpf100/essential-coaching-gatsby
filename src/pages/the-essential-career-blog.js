@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from 'react'
+import { graphql } from 'gatsby'
+import PropTypes from 'prop-types'
+
 import Layout from '../components/layout'
 import ContentBlock from '../components/ContentBlock'
 import FeaturedBlogPost from '../components/FeaturedBlogPost'
@@ -8,9 +11,9 @@ import inputData from '../pagesInput/the-essential-career-blog'
 
 const { blogArray } = inputData
 
-const BlogHomePage = () => {
-  const [isLoading, setIsLoading] = useState(true)
-  const [blogPosts, setBlogPosts] = useState([])
+const BlogHomePage = ({ data }) => {
+  const [isLoading, setIsLoading] = useState(false)
+  const [blogPosts, setBlogPosts] = useState(blogArray)
 
   const imageUrl = 'images/blog/'
 
@@ -22,7 +25,13 @@ const BlogHomePage = () => {
       return d - c
     })
 
+  const blog2 = 'blog/blog3.png'
+  // image_filename
+
+  // Currently using fixed date, will add either a source plugin https://www.gatsbyjs.com/docs/creating-a-source-plugin/ or reference API in future
+
   useEffect(() => {
+    /*  
     const allBlogPostsURL = `https://josephfletcher.co.uk/blog-backend/api/blogposts`
     fetch(allBlogPostsURL, {})
       .then(res => res.json())
@@ -30,7 +39,7 @@ const BlogHomePage = () => {
         setBlogPosts(sortPostsMostRecent(response))
         setIsLoading(false)
       })
-      .catch(error => console.log(error))
+      .catch(error => console.log(error)) */
   }, [])
 
   return (
@@ -43,22 +52,22 @@ const BlogHomePage = () => {
               <FeaturedBlogPost
                 key={blog._id}
                 blogInfo={blog}
-                imageUrl={imageUrl}
+                image={`blog/${blog.image_filename}.png`}
               />
             ))}
           </BlogPostContainer>
         </ContentBlock>
       ) : (
         <ContentBlock>
-          {blogArray.map(blog => (
-            <div className="col-md-6 p-0">
+          <BlogPostContainer xtraWide cards={3}>
+            {blogPosts.map(blog => (
               <FeaturedBlogPost
                 key={blog._id}
                 blogInfo={blog}
-                imageUrl={imageUrl}
+                image={`blog/${blog.image_filename}.png`}
               />
-            </div>
-          ))}
+            ))}
+          </BlogPostContainer>
         </ContentBlock>
       )}
     </Layout>
@@ -66,3 +75,36 @@ const BlogHomePage = () => {
 }
 
 export default BlogHomePage
+
+export const blogImageMainFragment = graphql`
+  fragment blogImageMain on File {
+    childImageSharp {
+      fluid(maxWidth: 400, quality: 100) {
+        ...GatsbyImageSharpFluid
+        ...GatsbyImageSharpFluidLimitPresentationSize
+      }
+    }
+  }
+`
+
+// Select Images using pagequery below.
+
+export const pageQuery = graphql`
+  query {
+    projectHero: file(relativePath: { eq: "hero/shoots.jpg" }) {
+      ...fluidImage
+    }
+    blog1: file(relativePath: { eq: "blog/blog1.png" }) {
+      ...blogImageMain
+    }
+    blog2: file(relativePath: { eq: "blog/blog2.png" }) {
+      ...blogImageMain
+    }
+    blog3: file(relativePath: { eq: "blog/blog2.png" }) {
+      ...blogImageMain
+    }
+  }
+`
+BlogHomePage.propTypes = { data: PropTypes.object }
+
+BlogHomePage.defaultProps = { data: {} }

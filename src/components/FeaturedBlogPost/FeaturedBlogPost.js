@@ -1,5 +1,5 @@
 import React from 'react'
-import { useStaticQuery, graphql, Link } from 'gatsby'
+import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import styled from '@emotion/styled'
 import BlogPostImage from '../BlogPostImage'
@@ -7,28 +7,16 @@ import BlogPostFooter from '../BlogPostFooter'
 import TextHeader from '../TextHeader'
 import TextParagraph from '../TextParagraph'
 
-const FeaturedPost = ({ blogInfo, imageUrl }) => {
+const FeaturedPost = ({ blogInfo, image }) => {
   const blogData = blogInfo
   const tagList = blogData.tags.map(tag => tag.name).join(' / ')
-
-  const data = useStaticQuery(graphql`
-    query {
-      placeholderImage: file(relativePath: { eq: "blog1.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 300) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
-
-  const image1 = data.placeholderImage.childImageSharp.fluid
 
   return (
     <div className="h-100 border-rounded shadow-sm d-flex flex-wrap px-3 pb-3">
       <div className="w-100">
-        <BlogPostImage image={image1} />
+        <div className="d-flex justify-content-center">
+          <BlogPostImage image={image} />
+        </div>
         <TextHeader
           size="medium"
           mainHeader={blogData.title}
@@ -48,7 +36,7 @@ const StyledBlogPost = styled(FeaturedPost)``
 
 FeaturedPost.propTypes = {
   blogInfo: PropTypes.array,
-  imageUrl: PropTypes.string,
+  image: PropTypes.object,
 }
 
 FeaturedPost.defaultProps = {
@@ -80,7 +68,6 @@ FeaturedPost.defaultProps = {
     image_filename: 'blog1.png',
     __v: 0,
   },
-  imageUrl: 'src/images/blog/',
 }
 
 export default StyledBlogPost
