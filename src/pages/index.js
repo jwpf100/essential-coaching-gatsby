@@ -19,7 +19,7 @@ import BlogInputData from '../pagesInput/the-essential-career-blog'
 import MainButton from '../components/MainButton'
 import TextHeader from '../components/TextHeader'
 import TextParagraph from '../components/TextParagraph'
-import TextLead from '../components/TextLink'
+import TextLead from '../components/TextAnchor'
 import SimpleIcon from '../components/SimpleIcon'
 
 const IndexPage = ({ data }) => {

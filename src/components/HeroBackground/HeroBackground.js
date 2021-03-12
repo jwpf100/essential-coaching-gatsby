@@ -3,16 +3,13 @@ import styled from '@emotion/styled'
 import PropTypes from 'prop-types'
 import BackgroundImage from 'gatsby-background-image'
 
-const Banner = ({ children, heroImage, headerText, className }) => {
+const Banner = ({ children, heroImage, className }) => {
   const newImageData = heroImage
 
   return (
     <BackgroundImage
       Tag="section"
-      className={[
-        className,
-        'container-fluid align-items-end align-items-sm-center d-flex',
-      ].join(' ')}
+      className={[className, ''].join(' ')}
       fluid={newImageData}
       critical
       fadeIn={false}
@@ -27,6 +24,7 @@ const HeroBackground = styled(Banner)`
   background-position: center;
   background-size: cover;
   min-height: 100vh;
+  padding: 0 0 0 0;
 `
 
 export default HeroBackground

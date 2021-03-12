@@ -2,11 +2,11 @@ import React from 'react'
 import styled from '@emotion/styled'
 import PropTypes from 'prop-types'
 
-const ContentBlockContactPage = ({ children, className, color }) => {
+const ContentBlockContactPage = ({ children, className, color, bs }) => {
   const colorBG = color ? 'bg-light' : ''
 
   return (
-    <section className={['container-fluid', colorBG, className].join(' ')}>
+    <section className={['container-fluid', colorBG, className, bs].join(' ')}>
       <div className="container py-5">{children}</div>
     </section>
   )
@@ -33,6 +33,10 @@ ContentBlockContactPage.propTypes = {
    * Set background color of container.  Use either props.color or leave blank.
    */
   color: PropTypes.object,
+  /**
+   * Set background color of container.  Use either props.color or leave blank.
+   */
+  bs: PropTypes.string,
 }
 
 ContentBlockContactPage.defaultProps = {

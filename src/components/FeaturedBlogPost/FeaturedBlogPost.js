@@ -5,7 +5,7 @@ import BlogPostImage from '../BlogPostImage'
 import BlogPostFooter from '../BlogPostFooter'
 import TextHeader from '../TextHeader'
 import TextParagraph from '../TextParagraph'
-import TextLink from '../TextLink'
+import TextLink from '../TextAnchor'
 
 const FeaturedPost = ({ blogInfo, image, src }) => {
   const blogData = blogInfo

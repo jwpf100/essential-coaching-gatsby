@@ -1,26 +1,31 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import PropTypes from 'prop-types'
-import { Link } from 'gatsby'
 
-const TextLink = ({ className, to, text, small }) => {
-  const linkPath = to
+const TextAnchor = ({ className, children, href }) => (
+  <a
+    type="link"
+    className={[className].join(' ')}
+    target="_blank"
+    rel="noreferrer"
+    href={href}
+  >
+    {children}
+  </a>
+)
 
-  return (
-    <Link className={[className, 'text-highlight'].join(' ')} to={`/${to}/`}>
-      {text}
-    </Link>
-  )
-}
-
-const StyledTextLink = styled(TextLink)`
+const StyledTextAnchor = styled(TextAnchor)`
   font-size: ${props => (props.small ? '1rem' : '1.25rem')};
   text-decoration: none;
+  color: inherit;
+  &:hover {
+    color: #f7882f;
+  }
 `
 
-export default StyledTextLink
+export default StyledTextAnchor
 
-TextLink.propTypes = {
+TextAnchor.propTypes = {
   /**
    * Emotion classname
    */
@@ -39,4 +44,4 @@ TextLink.propTypes = {
   small: PropTypes.bool,
 }
 
-TextLink.defaultProps = {}
+TextAnchor.defaultProps = {}
