@@ -13,13 +13,13 @@ import ContentBlock from '../components/ContentBlock'
 
 import Carousel from '../components/Carousel'
 import TriSection from '../components/TriSection'
-import InfoItem from '../components/InfoItem'
 import FeaturedBlogPost from '../components/FeaturedBlogPost'
 import inputData from '../pagesInput/index'
+import BlogInputData from '../pagesInput/the-essential-career-blog'
 import MainButton from '../components/MainButton'
 import TextHeader from '../components/TextHeader'
 import TextParagraph from '../components/TextParagraph'
-import TextLead from '../components/TextLink'
+import TextLead from '../components/TextAnchor'
 import SimpleIcon from '../components/SimpleIcon'
 
 const IndexPage = ({ data }) => {
@@ -48,6 +48,8 @@ const IndexPage = ({ data }) => {
     blogSectionTitle,
   } = inputData
 
+  const { blogArray } = BlogInputData
+
   const testimonialArray = [
     {
       image: testimonialImage1,
@@ -68,8 +70,6 @@ const IndexPage = ({ data }) => {
       job: testimonialJob3,
     },
   ]
-
-  const blogPostArray = [{ item: 1 }, { item: 2 }, { item: 3 }]
 
   return (
     <Layout>
@@ -92,7 +92,7 @@ const IndexPage = ({ data }) => {
             label="Book a free discovery call"
             primary
             onClick={() => navigate('/aboutme/')}
-            href="/contact"
+            href="/contact/"
           />
         </ContentText>
       </ContentBlock>
@@ -120,13 +120,23 @@ const IndexPage = ({ data }) => {
       {/* Coaching Process */}
       {/* ******** */}
       <ContentBlock>
-        <TriSection title={sectionTitle}>
+        <TextHeader size="large" mainHeader={sectionTitle} />
+        <TriSection noCards={3} xtraWide>
           {infoBlockArray.map(item => (
-            <InfoItem header={item.header} text={item.text}>
+            <>
               <SimpleIcon icon={item.icon} />
-            </InfoItem>
+              <TextHeader size="medium" mainHeader={item.header} />
+              <TextParagraph small paragraphs={item.text} bs="text-center" />
+            </>
           ))}
         </TriSection>
+        <MainButton
+          bs="mx-auto d-block"
+          label="How I can help"
+          primary
+          onClick={() => navigate('/career-coaching/')}
+          href="/career-coaching/"
+        />
       </ContentBlock>
       {/* ******** */}
       {/* Carousel */}
@@ -138,13 +148,23 @@ const IndexPage = ({ data }) => {
       {/* Blog Taster */}
       {/* ******** */}
       <ContentBlock>
-        <TriSection title={blogSectionTitle}>
-          {blogPostArray.map(item => (
-            <div className="col-md-4">
-              <FeaturedBlogPost />
-            </div>
+        <TextHeader size="large" mainHeader={blogSectionTitle} />
+        <TriSection noCards={3} xtraWide>
+          {blogArray.map(blog => (
+            <FeaturedBlogPost
+              key={blog._id}
+              blogInfo={blog}
+              src={`blog/${blog.image_filename}.png`}
+            />
           ))}
         </TriSection>
+        <MainButton
+          bs="mx-auto d-block"
+          label="The Essential Blog"
+          primary
+          onClick={() => navigate('/the-essential-career-blog/')}
+          href="/the-essential-career-blog/"
+        />
       </ContentBlock>
     </Layout>
   )

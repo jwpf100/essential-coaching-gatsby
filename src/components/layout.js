@@ -14,23 +14,41 @@ import Footer from './Footer/Footer'
 
 import './layout.scss'
 
-const Layout = ({ children }) => (
-  <>
-    <Global
-      styles={css`
-        main {
-          /* color: #6c757d; */
-        }
-      `}
-    />
-    <NavBar />
-    <main className="bumpdown">{children}</main>
-    <Footer />
-  </>
-)
+const Layout = ({ children, contact }) => {
+  if (!contact) {
+    return (
+      <>
+        <Global
+          styles={css`
+            main {
+              /* color: #6c757d; */
+            }
+          `}
+        />
+        <NavBar />
+        <main className="bumpdown">{children}</main>
+        <Footer />
+      </>
+    )
+  }
+  return (
+    <>
+      <Global
+        styles={css`
+          main {
+            /* color: #6c757d; */
+          }
+        `}
+      />
+      <NavBar />
+      <main className="">{children}</main>
+    </>
+  )
+}
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  contact: PropTypes.bool,
 }
 
 export default Layout

@@ -7,9 +7,6 @@ const BlogPostContainer = ({ className, xtraWide, cards, children }) => {
   const cardWidthMed = Math.floor(width / (cards - 1))
   const cardWidthLarge = Math.floor(width / cards)
 
-  console.log(width)
-  console.log(cardWidthMed)
-
   return (
     <div className={[className, 'row d-flex flex-wrap'].join(' ')}>
       {children.map(child => (
