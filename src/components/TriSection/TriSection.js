@@ -1,25 +1,21 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import PropTypes from 'prop-types'
-import MainButton from '../MainButton'
 
-const TriSection = ({ children, className, title }) => (
-  <div className={className}>
-    <div className={['row'].join(' ')}>
-      <h2 className=" text-center ">{title}</h2>
-    </div>
-    <div className="row justify-content-center">{children}</div>
-    <div className={['d-flex justify-content-center'].join(' ')}>
-      <MainButton primary label="How I can help" href="" bs="mt-3" />
-    </div>
-  </div>
-)
+const TriSection = ({ children, className, noCards, xtraWide }) => {
+  const width = xtraWide ? 12 : 10
+  const cardWidth = Math.floor(width / noCards)
 
-const StyledTriSection = styled(TriSection)`
-  button {
-    font-size: 1.25rem;
-  }
-`
+  return (
+    <div className={['row justify-content-center', className].join(' ')}>
+      {children.map(child => (
+        <div className={`col-12 col-md-${cardWidth} mb-4`}>{child}</div>
+      ))}
+    </div>
+  )
+}
+
+const StyledTriSection = styled(TriSection)``
 
 export default StyledTriSection
 
@@ -35,12 +31,15 @@ TriSection.propTypes = {
   /**
    * Title of info section.
    */
-  title: PropTypes.string,
+  noCards: PropTypes.number,
+  /**
+   * Title of info section.
+   */
+  xtraWide: PropTypes.bool,
 }
 
 TriSection.defaultProps = {
   className: '',
-  title: 'Example Header',
   children: [
     {
       icon: 'icon-question',

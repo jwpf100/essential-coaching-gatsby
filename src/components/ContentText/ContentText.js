@@ -16,12 +16,7 @@ const ContentText = ({ className, xtraWide, children }) => {
   )
 }
 
-const StyledContentText = styled(ContentText)`
-  p,
-  button {
-    font-size: 1.25rem;
-  }
-`
+const StyledContentText = styled(ContentText)``
 
 export default StyledContentText
 

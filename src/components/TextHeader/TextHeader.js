@@ -20,6 +20,9 @@ const TextHeader = ({
     case 'small':
       headerSize = 4
       break
+    case 'v-small':
+      headerSize = 5
+      break
     default:
       headerSize = 2
   }
