@@ -8,7 +8,6 @@ const TextLead = ({
   alignHeader,
   className,
   size,
-  color,
 }) => (
   <h3 className={[className, `text-${alignHeader}`].join(' ')}>
     <span className="text-highlight">{colorHeader}</span>
