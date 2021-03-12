@@ -1,7 +1,7 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "essential-coaching",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "An informational website for Essential Coaching",
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
@@ -16,7 +16,7 @@
     "bootstrap": "^5.0.0-beta2",
     "gatsby": "^2.32.3",
     "gatsby-background-image": "^1.4.1",
-    "gatsby-image": "^2.11.0",
+    "gatsby-image": "^3.0.0",
     "gatsby-plugin-emotion": "^5.4.0",
     "gatsby-plugin-manifest": "^2.12.0",
     "gatsby-plugin-offline": "^3.10.0",
@@ -37,8 +37,8 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^7.8.1",
     "eslint-config-airbnb": "^18.2.0",
-    "eslint-config-prettier": "^6.11.0",
-    "eslint-plugin-html": "^6.1.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-html": "^6.1.2",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-prettier": "^3.1.4",
@@ -58,8 +58,8 @@
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^7.20.0",
     "eslint-config-airbnb": "^18.2.1",
-    "eslint-config-prettier": "^7.2.0",
-    "eslint-plugin-html": "^6.1.1",
+    "eslint-config-prettier": "8.1.0",
+    "eslint-plugin-html": "6.1.2",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-prettier": "^3.3.1",
@@ -83,11 +83,11 @@
     "build-storybook": "build-storybook"
   },
   "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "type": "",
+    "url": ""
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": ""
   },
   "config": {
     "commitizen": {
