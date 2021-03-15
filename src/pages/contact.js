@@ -14,6 +14,7 @@ import ContentText from '../components/ContentText'
 import TriSection from '../components/TriSection'
 import SimpleIcon from '../components/SimpleIcon'
 import TextAnchor from '../components/TextAnchor'
+import SEO from '../components/seo'
 
 import inputData from '../pagesInput/contact'
 
@@ -23,6 +24,7 @@ const ContactPage = ({ data, className }) => {
 
   return (
     <Layout className={className} contact>
+    <SEO title="Contact Details" description="Contact Nikki Thomas to learn how you can create the career you want.  Email:nicola@essentialcoaching.co.uk" />
       <HeroBackground heroImage={heroImage} backgroundSide="left">
         <OverlayBackground>
           <ContentBlockContactPage bs="d-flex align-items-center bumpdown">

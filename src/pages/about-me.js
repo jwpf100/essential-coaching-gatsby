@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, useScrollRestoration } from 'gatsby'
 import Img from 'gatsby-image'
 
 import PropTypes from 'prop-types'
@@ -14,11 +14,12 @@ import ContentTextImage from '../components/ContentTextImage'
 import TextQuote from '../components/TextQuote'
 import inputData from '../pagesInput/about-me'
 import ContentIconList from '../components/ContentIconList'
-import ContentIconListText from '../components/ContentIconListText'
-import ContentIconListImg from '../components/ContentIconListImg'
-import ContentIconListIcon from '../components/ContentIconListIcon'
+import seo from '../components/seo'
 
 export const AboutMePage = ({ data }) => {
+
+  const scrollRestoration = useScrollRestoration(`scroll-restoration-key`);
+
   const heroImage = data.projectHero.childImageSharp.fluid
   const image1 = data.natural.childImageSharp.fluid
   const image2 = data.timechange.childImageSharp.fluid
@@ -98,8 +99,8 @@ export const AboutMePage = ({ data }) => {
   ]
 
   return (
-    <Layout>
-      <SEO title="Home" />
+    <Layout {...scrollRestoration}>
+      <SEO title="Nikki Thomas" description="Learn more about Nikki Thomas, career coach, workplace psychologist and founder of Essential Coaching." />
       {/* ******** */}
       {/* Hero Banner Image */}
       {/* ******** */}
