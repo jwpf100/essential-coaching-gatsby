@@ -9,6 +9,7 @@ import TextParagraph from '../components/TextParagraph'
 import BlogPostFooter from '../components/BlogPostFooter'
 import ContentSpacer from '../components/ContentSpacer'
 import TextLink from '../components/TextLink'
+import SEO from '../components/seo'
 
 const { blogArray } = inputData
 const blogPostNo = 2
