@@ -9,26 +9,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import { Global, css } from '@emotion/react'
-import {useScrollRestoration} from 'gatsby'
 
 import NavBar from './NavBar/NavBar'
 import Footer from './Footer/Footer'
-
-import '../../src/scss/custom.scss'
-
-// Bootstrap
-
-// import './node_modules/bootstrap/js/dist/alert'
-// import './node_modules/bootstrap/js/dist/button'
-import '../../node_modules/bootstrap/js/dist/carousel'
-import '../../node_modules/bootstrap/js/dist/collapse'
-// import './node_modules/bootstrap/js/dist/dropdown'
-// import './node_modules/bootstrap/js/dist/modal'
-// import './node_modules/bootstrap/js/dist/popover'
-// import './node_modules/bootstrap/js/dist/scrollspy'
-// import './node_modules/bootstrap/js/dist/tab'
-// import './node_modules/bootstrap/js/dist/toast'
-// import './node_modules/bootstrap/js/dist/tooltip'
 
 import './layout.scss'
 
