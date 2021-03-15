@@ -73,7 +73,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO title="Great Careers Start Here!" description="Career coaching for people who want to create a career they love." />
       {/* ******** */}
       {/* Hero Banner Image */}
       {/* ******** */}

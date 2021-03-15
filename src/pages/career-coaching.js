@@ -66,7 +66,7 @@ export const HowICanHelpPage = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO title="Coaching Process" description="What is career coaching and how can it help you?" />
       <HeroBanner heroImage={heroImage} backgroundSide="right">
         <div className="container d-flex">
           <div className="row h-50 justify-content-end justify-content-sm-start">
