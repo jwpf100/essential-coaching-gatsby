@@ -21,8 +21,8 @@
   min-height: 290px;
 }
 .carousel .carousel-item .img-box {
-  width: 135px;
-  height: 135px;
+  width: 136px;
+  height: 136px;
   margin: 0 auto;
   padding: 5px;
   border: 1px solid #ddd;
@@ -49,6 +49,12 @@
 .carousel-control-prev,
 .carousel-control-next {
   filter: $carousel-dark-control-icon-filter;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  position: absolute;
+  top: 52px;
 }
 
 .carousel-indicators {
