@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
+import {css} from '@emotion/react'
 import PropTypes from 'prop-types'
 import BackgroundImage from 'gatsby-background-image'
 
@@ -10,8 +11,7 @@ const Banner = ({ children, heroImage, headerText, className }) => {
     <BackgroundImage
       Tag="section"
       className={[
-        className,
-        'container-fluid align-items-end align-items-sm-center d-flex',
+        className, 'container-fluid d-flex g-0'
       ].join(' ')}
       fluid={newImageData}
       critical
@@ -22,10 +22,10 @@ const Banner = ({ children, heroImage, headerText, className }) => {
   )
 }
 
+//align-items-end align-items-sm-center
+
 const HeroBanner = styled(Banner)`
   background-repeat: no-repeat;
-  background-position: ${props =>
-    props.backgroundSide === 'left' ? 'top left' : 'top right'};
   background-size: cover;
   min-height: 60vh;
 `

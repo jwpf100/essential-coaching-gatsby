@@ -3,9 +3,9 @@ import styled from '@emotion/styled'
 import PropTypes from 'prop-types'
 
 const HeroText = ({ children, headerText, className }) => (
-  <div className="container d-flex">
+  <div className="container d-flex align-self-end align-self-sm-center">
     <div className="row h-50 justify-content-center justify-content-sm-start align-items-end">
-      <div className="col-12 col-sm-6 pr-0 pr-sm-auto">
+      <div className="w-100 col-12 col-sm-6 pr-0 pr-sm-auto">
         <h1
           className={[
             className,
@@ -24,8 +24,7 @@ const StyledHeroText = styled(HeroText)`
   color: white;
   @media (max-width: 576px) {
     color: #6c757d;
-    opacity: 0.8;
-    background-color: white;
+    /* background-color: rgba(255, 255, 255, 0.5); */
   }
 `
 
