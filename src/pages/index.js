@@ -158,13 +158,13 @@ const IndexPage = ({ data }) => {
             />
           ))}
         </TriSection>
-        <MainButton
+        {/* <MainButton
           bs="mx-auto d-block"
           label="The Essential Blog"
           primary
           onClick={() => navigate('/the-essential-career-blog/')}
           href="/the-essential-career-blog/"
-        />
+        /> */}
       </ContentBlock>
     </Layout>
   )
