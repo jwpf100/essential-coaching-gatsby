@@ -11,9 +11,7 @@ const BlogPostImage = ({ className, image, src }) => (
   /> */
   <img
     className={[
-      className,
-      'w-75 d-block rounded-circle mb-3 mx-auto border',
-    ].join(' ')}
+      'w-75 d-block rounded-circle mb-3 mx-auto border', className ].join(' ')}
     src={`/${src}`}
     alt="Placeholder for blogpost"
   />
@@ -23,6 +21,7 @@ BlogPostImage.propTypes = {
   className: PropTypes.object,
   image: PropTypes.object,
   src: PropTypes.string,
+  maxWidth: 350,
 }
 
 const StyledBlogPostImage = styled(BlogPostImage)``
