@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import {css} from '@emotion/react'
 
 import { graphql, navigate } from 'gatsby'
 import SEO from '../components/seo'
@@ -71,8 +72,8 @@ export const HowICanHelpPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Coaching Process" description="What is career coaching and how can it help you?" />
-      <HeroBanner heroImage={heroImage} backgroundPosition="center bottom">
-        <div className="container align-self-start align-self-sm-center pt-3 pt-sm-0">
+      <HeroBanner heroImage={heroImage} css={css`background-position: center bottom`}>
+        <div className="container align-self-start align-self-sm-center pt-3 pt-sm-0 px-2">
           <div className="row">
             <div className="col-12 col-md-8 col-lg-6">
               <TextQuote paragraphs={leadQuote} bs={'fst-italic'}/>

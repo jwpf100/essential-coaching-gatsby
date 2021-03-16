@@ -1,6 +1,7 @@
 import React from 'react'
 import { graphql, useScrollRestoration } from 'gatsby'
 import Img from 'gatsby-image'
+import {css} from '@emotion/react'
 
 import PropTypes from 'prop-types'
 import Layout from '../components/layout'
@@ -14,7 +15,7 @@ import ContentTextImage from '../components/ContentTextImage'
 import TextQuote from '../components/TextQuote'
 import inputData from '../pagesInput/about-me'
 import ContentIconList from '../components/ContentIconList'
-import seo from '../components/seo'
+
 
 export const AboutMePage = ({ data }) => {
 
@@ -104,7 +105,7 @@ export const AboutMePage = ({ data }) => {
       {/* ******** */}
       {/* Hero Banner Image */}
       {/* ******** */}
-      <HeroBanner heroImage={heroImage} backgroundSide="left" />
+      <HeroBanner heroImage={heroImage} css={css`background-position: top left`} />
       {/* ******** */}
       {/* Lead Blurb */}
       {/* ******** */}
