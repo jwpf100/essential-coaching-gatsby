@@ -14,6 +14,10 @@ import NavBar from './NavBar/NavBar'
 import Footer from './Footer/Footer'
 
 import './layout.scss'
+//Add Fonts
+
+import "@fontsource/lato/400.css"
+import "@fontsource/merriweather/300.css"
 
 const Layout = ({ children, contact }) => {
   

@@ -22,7 +22,6 @@ const HeroText = ({ children, headerText, className }) => (
 
 const StyledHeroText = styled(HeroText)`
   color: white;
-  font-weight: normal;
   @media (max-width: 576px) {
     color: #6c757d;
     opacity: 0.8;
