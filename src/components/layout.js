@@ -18,6 +18,7 @@ import './layout.scss'
 
 import "@fontsource/lato/400.css"
 import "@fontsource/merriweather/300.css"
+import "simple-line-icons/css/simple-line-icons.css"
 
 const Layout = ({ children, contact }) => {
   

@@ -1,14 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from '@emotion/styled'
-import { faLinkedin, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
-import {
-  faPhone,
-  faPhoneSquare,
-  faEnvelope,
-  faEnvelopeSquare,
-} from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import TextAnchor from '../TextAnchor'
+import TextParagraph from '../TextParagraph'
+
+// import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
+// import {
+//   faPhone,
+  
+//   faEnvelope,
+  
+// } from '@fortawesome/free-solid-svg-icons'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Footer = ({ className }) => (
   <footer className={className}>
@@ -20,43 +23,19 @@ const Footer = ({ className }) => (
       </div>
       <div className="row justify-content-center align-items-center pb-3">
         <div className="col-xs-12 col-md-4 col-lg-3 pb-3 pb-md-0 text-center">
-          <a
-            type="link"
-            className=" text-decoration-none"
-            href="mailto:nikki@essentialcoaching.co.uk?subject=Essential Coaching Enquiry"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FontAwesomeIcon
-              icon={faEnvelope}
-              className="fas fa-phone fa-lg me-3"
-            />
-            nikki@essentialcoaching.co.uk
-          </a>
+        <TextAnchor href="mailto:nikki@essentialcoaching.co.uk?subject=Essential Coaching Enquiry">
+            <i className={['icon-envelope', 'me-2'].join(' ')} />       
+          </TextAnchor>
         </div>
         <div className="col-xs-12 col-md-4 col-lg-3 pb-3 pb-md-0 text-center">
-          <a className=" text-decoration-none">
-            <FontAwesomeIcon
-              icon={faPhone}
-              className="fas fa-phone fa-lg me-3"
-            />
-            +44 7413 357 217
-          </a>
+        <TextAnchor href="tel:+44-7413-357-217">
+            <i className={['icon-phone', 'me-2'].join(' ')} />            
+          </TextAnchor>
         </div>
         <div className="col-xs-12 col-md-4 col-lg-3 pb-3 pb-md-0 text-center">
-          <a
-            type="link"
-            className=" text-decoration-none"
-            href="https://www.linkedin.com/in/nikki-thomas-essentialcoaching/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FontAwesomeIcon
-              icon={faLinkedinIn}
-              className="fab fa-linkedin fa-lg me-3"
-            />
-            Nikki Thomas
-          </a>
+          <TextAnchor href="https://www.linkedin.com/in/nikki-thomas-essentialcoaching/">
+            <i className={['icon-social-linkedin', 'me-2'].join(' ')} />
+          </TextAnchor>
         </div>
       </div>
       <div className="row footer-contact justify-content-center align-items-center bg-highlight">
