@@ -175,7 +175,7 @@ export default IndexPage
 export const fluidImage = graphql`
   fragment fluidImage on File {
     childImageSharp {
-      fluid(maxWidth: 1600) {
+      fluid(maxWidth: 1600, quality: 100) {
         ...GatsbyImageSharpFluid
       }
     }
@@ -184,7 +184,7 @@ export const fluidImage = graphql`
 export const profileImageFragment = graphql`
   fragment profileImage on File {
     childImageSharp {
-      fluid(maxWidth: 500, quality: 100) {
+      fluid(maxWidth: 400, quality: 100) {
         ...GatsbyImageSharpFluid
         ...GatsbyImageSharpFluidLimitPresentationSize
       }

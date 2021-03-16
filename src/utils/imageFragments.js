@@ -24,7 +24,7 @@ export const ILoveImage = graphql`
 export const fluidImage = graphql`
   fragment fluidImage on File {
     childImageSharp {
-      fluid(maxWidth: 1600) {
+      fluid(maxWidth: 1600, quality:100) {
         ...GatsbyImageSharpFluid
       }
     }
