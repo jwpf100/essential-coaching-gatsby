@@ -150,16 +150,17 @@ export const HowICanHelpPage = ({ data }) => {
 }
 
 export default HowICanHelpPage
-
+/*
 export const fluidImage = graphql`
   fragment fluidImage on File {
     childImageSharp {
-      fluid(maxWidth: 1600) {
+      fluid(maxWidth: 1600, quality: 100) {
         ...GatsbyImageSharpFluid
       }
     }
   }
 `
+*/
 
 export const blogImageFragment = graphql`
   fragment blogImage on File {
