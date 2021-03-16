@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 const TextAnchor = ({ className, children, href }) => (
   <a
     type="link"
-    className={[className,'d-flex align-items-center justify-content-center'].join(' ')}
+    className={[className].join(' ')}
     target="_blank"
     rel="noreferrer"
     href={href}
@@ -20,9 +20,6 @@ const StyledTextAnchor = styled(TextAnchor)`
   color: inherit;
   &:hover {
     color: #f7882f;
-  }
-  i{
-    font-size: 2.5rem;
   }
 `
 
