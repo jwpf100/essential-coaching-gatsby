@@ -9,8 +9,8 @@ const Overlay = ({ children, className }) => (
 const OverlayBackground = styled(Overlay)`
   display: -webkit-flex; /*  safari */
   display: flex;
-  background-color: rgba(255, 255, 255, 0.75);
-  min-height: 100vh;
+  background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.6));
+  min-height: 100%;
   width: 100%;
 `
 

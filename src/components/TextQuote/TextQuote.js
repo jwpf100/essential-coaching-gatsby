@@ -2,11 +2,11 @@ import React from 'react'
 import styled from '@emotion/styled'
 import PropTypes from 'prop-types'
 
-const TextQuote = ({ className, paragraphs }) => (
+const TextQuote = ({ className, paragraphs, bs }) => (
   <blockquote
     className={[
       className,
-      'quote-card d-flex align-items-center justify-content-center',
+      'quote-card d-flex align-items-center justify-content-center', bs
     ].join(' ')}
   >
     <p>{paragraphs}</p>

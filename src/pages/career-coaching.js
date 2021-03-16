@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import {css} from '@emotion/react'
 
 import { graphql, navigate } from 'gatsby'
 import SEO from '../components/seo'
@@ -15,6 +16,7 @@ import ContentSpacer from '../components/ContentSpacer'
 import TextList from '../components/TextList'
 import TextCardGroup from '../components/TextCardGroup'
 import MainButton from '../components/MainButton'
+import TextQuote from '../components/TextQuote'
 
 import inputData from '../pagesInput/career-coaching'
 import ContentIconList from '../components/ContentIconList'
@@ -25,6 +27,9 @@ export const HowICanHelpPage = ({ data }) => {
 
   const {
     leadMainHeader,
+    leadQuote,
+    leadQuoteName,
+    leadQuoteJob,
     leadParagraphs,
     iconListIntro,
     icon1,
@@ -67,19 +72,13 @@ export const HowICanHelpPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Coaching Process" description="What is career coaching and how can it help you?" />
-      <HeroBanner heroImage={heroImage} backgroundSide="right">
-        <div className="container d-flex">
-          <div className="row h-50 justify-content-end justify-content-sm-start">
-            <div className="col-12 col-md-8 col-lg-6 pr-sm-auto">
-              <blockquote className="quote-card d-flex align-items-center justify-content-center">
-                <p className="lead text-muted font-italic">
-                  Nikki’s coaching was great; so useful in making me think more
-                  critically about my decisions/actions for the future.
-                </p>
-              </blockquote>
-              <p className="text-right text-muted title-mobile">
-                - Jess, Nutritionist
-              </p>
+      <HeroBanner heroImage={heroImage} css={css`background-position: center bottom`}>
+        <div className="container align-self-start align-self-sm-center pt-3 pt-sm-0 px-2">
+          <div className="row">
+            <div className="col-12 col-md-8 col-lg-6">
+              <TextQuote paragraphs={leadQuote} bs={'fst-italic'}/>
+                <TextParagraph paragraphs={`- ${leadQuoteName}, ${leadQuoteJob}`} bs={'text-end'} small /> 
+
             </div>
           </div>
         </div>
@@ -150,16 +149,17 @@ export const HowICanHelpPage = ({ data }) => {
 }
 
 export default HowICanHelpPage
-
+/*
 export const fluidImage = graphql`
   fragment fluidImage on File {
     childImageSharp {
-      fluid(maxWidth: 1600) {
+      fluid(maxWidth: 1600, quality: 100) {
         ...GatsbyImageSharpFluid
       }
     }
   }
 `
+*/
 
 export const blogImageFragment = graphql`
   fragment blogImage on File {
