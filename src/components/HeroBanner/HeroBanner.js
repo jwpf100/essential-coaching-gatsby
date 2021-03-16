@@ -10,8 +10,7 @@ const Banner = ({ children, heroImage, headerText, className }) => {
     <BackgroundImage
       Tag="section"
       className={[
-        className,
-        'container-fluid align-items-end align-items-sm-center d-flex',
+        className, 'container-fluid d-flex'
       ].join(' ')}
       fluid={newImageData}
       critical
@@ -22,10 +21,13 @@ const Banner = ({ children, heroImage, headerText, className }) => {
   )
 }
 
+//align-items-end align-items-sm-center
+
 const HeroBanner = styled(Banner)`
   background-repeat: no-repeat;
-  background-position: ${props =>
-    props.backgroundSide === 'left' ? 'top left' : 'top right'};
+  { /* background-position: ${props =>
+    props.backgroundSide === 'left' ? 'top left' : 'top right'}; */}
+  background-position: center bottom;
   background-size: cover;
   min-height: 60vh;
 `
