@@ -21,7 +21,6 @@ import TextHeader from '../components/TextHeader'
 import TextParagraph from '../components/TextParagraph'
 import TextLead from '../components/TextAnchor'
 import SimpleIcon from '../components/SimpleIcon'
-import MailChimpSignUp from '../components/MailChimpSignUp'
 
 const IndexPage = ({ data }) => {
   // Define Images
@@ -167,7 +166,6 @@ const IndexPage = ({ data }) => {
           href="/the-essential-career-blog/"
         />
       </ContentBlock>
-      <MailChimpSignUp />
     </Layout>
   )
 }

@@ -35,6 +35,7 @@ const Layout = ({ children, contact }) => {
         />
         <NavBar />
         <main className="bumpdown">{children}</main>
+        <MailChimpSignUp />
         <Footer />
       </>
     )
