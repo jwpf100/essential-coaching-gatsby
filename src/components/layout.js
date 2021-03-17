@@ -8,20 +8,54 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import NavBar from './NavBar'
-import Footer from './Footer'
-import './layout.scss'
+import { Global, css } from '@emotion/react'
 
-const Layout = ({ children }) => (
-  <>
-    <NavBar />
-    <main className="bumpdown">{children}</main>
-    <Footer />
-  </>
-)
+import NavBar from './NavBar/NavBar'
+import Footer from './Footer/Footer'
+
+import './layout.scss'
+//Add Fonts
+
+import "@fontsource/lato/400.css"
+import "@fontsource/merriweather/300.css"
+import "simple-line-icons/css/simple-line-icons.css"
+
+const Layout = ({ children, contact }) => {
+  
+  if (!contact) {
+    return (
+      <>
+        <Global
+          styles={css`
+            main {
+              /* color: #6c757d; */
+            }
+          `}
+        />
+        <NavBar />
+        <main className="bumpdown">{children}</main>
+        <Footer />
+      </>
+    )
+  }
+  return (
+    <>
+      <Global
+        styles={css`
+          main {
+            /* color: #6c757d; */
+          }
+        `}
+      />
+      <NavBar />
+      <main className="">{children}</main>
+    </>
+  )
+}
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  contact: PropTypes.bool,
 }
 
 export default Layout
