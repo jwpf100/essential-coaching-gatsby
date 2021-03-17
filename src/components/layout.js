@@ -12,6 +12,7 @@ import { Global, css } from '@emotion/react'
 
 import NavBar from './NavBar/NavBar'
 import Footer from './Footer/Footer'
+import MailChimpSignUp from '../components/MailChimpSignUp'
 
 import './layout.scss'
 //Add Fonts
@@ -34,6 +35,7 @@ const Layout = ({ children, contact }) => {
         />
         <NavBar />
         <main className="bumpdown">{children}</main>
+        <MailChimpSignUp />
         <Footer />
       </>
     )
