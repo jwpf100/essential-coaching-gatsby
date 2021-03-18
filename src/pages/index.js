@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { graphql, navigate, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 import { css } from '@emotion/react'
 
@@ -23,7 +23,6 @@ import TextParagraph from '../components/TextParagraph'
 import TextLead from '../components/TextAnchor'
 import SimpleIcon from '../components/SimpleIcon'
 import OverlayBackground from '../components/OverlayBackground'
-import CalendlyWidget from '../components/CalendlyWidget'
 
 const IndexPage = ({ data }) => {
   // Define Images
@@ -104,7 +103,6 @@ const IndexPage = ({ data }) => {
             bs="mx-auto d-block"
             label="Book a free discovery call"
             primary
-            onClick={() => navigate('/aboutme/')}
             href="/contact/"
           />
         </ContentText>
@@ -124,7 +122,6 @@ const IndexPage = ({ data }) => {
             bs="mx-auto d-block"
             label="My Story"
             primary
-            onClick={() => navigate('/about-me/')}
             href="/aboutme/"
           />
         </ContentTextImage>
@@ -147,7 +144,6 @@ const IndexPage = ({ data }) => {
           bs="mx-auto d-block"
           label="How I can help"
           primary
-          onClick={() => navigate('/career-coaching/')}
           href="/career-coaching/"
         />
       </ContentBlock>
@@ -171,13 +167,6 @@ const IndexPage = ({ data }) => {
             />
           ))}
         </TriSection>
-        {/* <MainButton
-          bs="mx-auto d-block"
-          label="The Essential Blog"
-          primary
-          onClick={() => navigate('/the-essential-career-blog/')}
-          href="/the-essential-career-blog/"
-        /> */}
       </ContentBlock>
     </Layout>
   )
