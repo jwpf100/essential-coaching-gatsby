@@ -4,13 +4,7 @@ import PropTypes from 'prop-types'
 
 import MailChimpHiddenFields from '../MailChimpHiddenFields'
 
-const MailChimpForm = ({
-  children,
-  className,
-  email,
-  message,
-  handleInputChange,
-}) => (
+const MailChimpForm = ({ className, email, message, handleInputChange }) => (
   <div className={className}>
     <label id="mailchimp_op_message" htmlFor="mce-EMAIL">
       {message}
@@ -111,11 +105,12 @@ const StyledMailChimpForm = styled(MailChimpForm)`
 export default StyledMailChimpForm
 
 MailChimpForm.propTypes = {
-  children: PropTypes.node,
   className: PropTypes.string,
+  email: PropTypes.string,
+  message: PropTypes.string,
+  handleInputChange: PropTypes.func,
 }
 
 MailChimpForm.defaultProps = {
-  children: '',
   className: '',
 }
