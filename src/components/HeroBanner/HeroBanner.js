@@ -7,13 +7,15 @@ import BackgroundImage from 'gatsby-background-image'
 const Banner = ({ children, heroImage, headerText, className }) => {
   const newImageData = heroImage
 
+  const backgroundFluidImageStack = [newImageData, `linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5))`].reverse()
+
   return (
     <BackgroundImage
       Tag="section"
       className={[
-        className, 'container-fluid d-flex g-0'
+        className, 'container-fluid d-flex justify-content-center'
       ].join(' ')}
-      fluid={newImageData}
+      fluid={backgroundFluidImageStack}
       critical
       fadeIn={false}
     >

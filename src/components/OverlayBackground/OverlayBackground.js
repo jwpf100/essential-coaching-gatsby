@@ -3,7 +3,9 @@ import styled from '@emotion/styled'
 import PropTypes from 'prop-types'
 
 const Overlay = ({ children, className }) => (
-  <div className={className}>{children}</div>
+  <div className={[
+    className, ''
+  ].join(' ')}>{children}</div>
 )
 
 const OverlayBackground = styled(Overlay)`

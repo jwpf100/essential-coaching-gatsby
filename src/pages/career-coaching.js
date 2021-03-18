@@ -21,7 +21,7 @@ import TextQuote from '../components/TextQuote'
 import inputData from '../pagesInput/career-coaching'
 import ContentIconList from '../components/ContentIconList'
 
-export const HowICanHelpPage = ({ data }) => {
+const HowICanHelpPage = ({ data }) => {
   const heroImage = data.projectHero.childImageSharp.fluid
   const blogImage = data.blogImage1.childImageSharp.fluid
 

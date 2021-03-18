@@ -17,7 +17,7 @@ import inputData from '../pagesInput/about-me'
 import ContentIconList from '../components/ContentIconList'
 
 
-export const AboutMePage = ({ data }) => {
+const AboutMePage = ({ data }) => {
 
   const scrollRestoration = useScrollRestoration(`scroll-restoration-key`);
 

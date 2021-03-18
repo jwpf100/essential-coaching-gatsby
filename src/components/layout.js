@@ -7,6 +7,7 @@
 
 import React from 'react'
 import PropTypes from 'prop-types'
+import styled from '@emotion/styled'
 
 import { Global, css } from '@emotion/react'
 
@@ -15,14 +16,14 @@ import Footer from './Footer/Footer'
 import MailChimpSignUp from './MailChimpSignUp'
 import CalendlyWidget from './CalendlyWidget'
 
-import './layout.scss'
 // Add Fonts
 
 import '@fontsource/lato/400.css'
 import '@fontsource/merriweather/300.css'
 import 'simple-line-icons/css/simple-line-icons.css'
 
-const Layout = ({ children, contact }) => {
+const Layout = ({ children, contact, className }) => {
+  
   if (!contact) {
     return (
       <>
@@ -34,7 +35,7 @@ const Layout = ({ children, contact }) => {
           `}
         />
         <NavBar />
-        <main className="bumpdown">{children}</main>
+        <main className={className}>{children}</main>
         <MailChimpSignUp />
         <Footer />
         <CalendlyWidget />
@@ -56,9 +57,13 @@ const Layout = ({ children, contact }) => {
   )
 }
 
+const StyledLayout = styled(Layout)`
+margin-top: 70px;
+`
+
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
   contact: PropTypes.bool,
 }
 
-export default Layout
+export default StyledLayout

@@ -7,16 +7,12 @@ const ContentBlock = ({ children, className, color }) => {
 
   return (
     <section className={['container-fluid', colorBG, className].join(' ')}>
-      <div className="container py-5">{children}</div>
+      <div className="container h-100 py-5">{children}</div>
     </section>
   )
 }
 
-const StyledContentBlock = styled(ContentBlock)`
-   {
-    /* min-height: 50vh; */
-  }
-`
+const StyledContentBlock = styled(ContentBlock)``
 
 export default StyledContentBlock
 
