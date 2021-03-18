@@ -1,6 +1,5 @@
 import React from 'react'
 
-
 import { graphql } from 'gatsby'
 
 import PropTypes from 'prop-types'
@@ -84,9 +83,14 @@ const IndexPage = ({ data }) => {
       {/* ******** */}
       {/* Hero Banner Image */}
       {/* ******** */}
-    
-      <HeroBanner heroImage={heroImage} css={css`background-position: top right`}>
-            <HeroText headerText="Great Careers Start Here" xtraWide/>
+
+      <HeroBanner
+        heroImage={heroImage}
+        css={css`
+          background-position: top right;
+        `}
+      >
+        <HeroText headerText="Great Careers Start Here" xtraWide />
       </HeroBanner>
       {/* ******** */}
       {/* Lead Blurb */}
@@ -96,7 +100,6 @@ const IndexPage = ({ data }) => {
           <TextLead mainHeader={headerLead} alignHeader="left" />
           <TextParagraph paragraphs={paragraphLeadArray} />
           <MainButton
-            bs="mx-auto d-block"
             label="Book a free discovery call"
             primary
             href="/contact/"
@@ -114,12 +117,7 @@ const IndexPage = ({ data }) => {
           xtraWide
         >
           <TextParagraph paragraphs={aboutMeParagraphArray} />
-          <MainButton
-            bs="mx-auto d-block"
-            label="My Story"
-            primary
-            href="/aboutme/"
-          />
+          <MainButton label="My Story" primary href="/aboutme/" />
         </ContentTextImage>
       </ContentBlock>
       {/* ******** */}
@@ -136,12 +134,7 @@ const IndexPage = ({ data }) => {
             </>
           ))}
         </TriSection>
-        <MainButton
-          bs="mx-auto d-block"
-          label="How I can help"
-          primary
-          href="/career-coaching/"
-        />
+        <MainButton label="How I can help" primary href="/career-coaching/" />
       </ContentBlock>
       {/* ******** */}
       {/* Carousel */}

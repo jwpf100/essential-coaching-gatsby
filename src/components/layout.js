@@ -23,7 +23,6 @@ import '@fontsource/merriweather/300.css'
 import 'simple-line-icons/css/simple-line-icons.css'
 
 const Layout = ({ children, contact, className }) => {
-  
   if (!contact) {
     return (
       <>
@@ -52,18 +51,19 @@ const Layout = ({ children, contact, className }) => {
         `}
       />
       <NavBar />
-      <main className="">{children}</main>
+      <main>{children}</main>
     </>
   )
 }
 
 const StyledLayout = styled(Layout)`
-margin-top: 70px;
+  margin-top: 70px;
 `
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
   contact: PropTypes.bool,
+  className: PropTypes.string,
 }
 
 export default StyledLayout

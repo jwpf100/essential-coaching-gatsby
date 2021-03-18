@@ -1,6 +1,6 @@
 const inputData = {
   openParagraph:
-    "Whether you're serious about making a change and would like to arrange a complimentary call, or you just have some questions, I'd love to hear from you. Please get in touch using the details below, or follow me on LinkedIn to learn more about what I do.",
+    "Whether you're serious about making a change and would like to arrange a complimentary call, or you just have some questions, I'd love to hear from you. Please get in touch using the details below, follow me on LinkedIn to learn more about what I do or sign up to my mailing list for monthly career tips.",
   contactOptionsArray: [
     {
       icon: 'icon-envelope',
