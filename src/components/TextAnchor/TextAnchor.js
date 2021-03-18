@@ -5,7 +5,10 @@ import PropTypes from 'prop-types'
 const TextAnchor = ({ className, children, href }) => (
   <a
     type="link"
-    className={[className,'d-flex align-items-center justify-content-center'].join(' ')}
+    className={[
+      className,
+      'd-flex flex-column align-items-center justify-content-center',
+    ].join(' ')}
     target="_blank"
     rel="noreferrer"
     href={href}
@@ -21,7 +24,7 @@ const StyledTextAnchor = styled(TextAnchor)`
   &:hover {
     color: #f7882f;
   }
-  i{
+  i {
     font-size: 2.5rem;
   }
 `
@@ -36,15 +39,11 @@ TextAnchor.propTypes = {
   /**
    * Emotion classname
    */
-  to: PropTypes.string,
+  href: PropTypes.string,
   /**
    * Emotion classname
    */
-  text: PropTypes.string,
-  /**
-   * Emotion classname
-   */
-  small: PropTypes.bool,
+  children: PropTypes.node,
 }
 
 TextAnchor.defaultProps = {}

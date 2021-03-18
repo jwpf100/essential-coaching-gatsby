@@ -9,18 +9,18 @@ const Footer = ({ className }) => (
     <div className="container-fluid bg-secondary border-top footer">
       <div className="row pt-3 justify-content-center">
         <div className="col-12 text-center">
-          <TextHeader mainHeader='Contact me' size='small' />
+          <TextHeader mainHeader="Contact me" size="small" />
         </div>
       </div>
       <div className="row justify-content-center align-items-center py-3">
         <div className="col-3">
-        <TextAnchor href="mailto:nikki@essentialcoaching.co.uk?subject=Essential Coaching Enquiry">
-            <i className={['icon-envelope', 'me-2'].join(' ')} />       
+          <TextAnchor href="mailto:nikki@essentialcoaching.co.uk?subject=Essential Coaching Enquiry">
+            <i className={['icon-envelope', 'me-2'].join(' ')} />
           </TextAnchor>
         </div>
         <div className="col-3">
-        <TextAnchor href="tel:+44-7413-357-217">
-            <i className={['icon-phone', 'me-2'].join(' ')} />            
+          <TextAnchor href="tel:+44-7413-357-217">
+            <i className={['icon-phone', 'me-2'].join(' ')} />
           </TextAnchor>
         </div>
         <div className="col-3">

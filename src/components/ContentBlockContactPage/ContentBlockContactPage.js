@@ -12,11 +12,7 @@ const ContentBlockContactPage = ({ children, className, color, bs }) => {
   )
 }
 
-const StyledContentBlockContactPage = styled(ContentBlockContactPage)`
-   {
-    /* min-height: 50vh; */
-  }
-`
+const StyledContentBlockContactPage = styled(ContentBlockContactPage)``
 
 export default StyledContentBlockContactPage
 

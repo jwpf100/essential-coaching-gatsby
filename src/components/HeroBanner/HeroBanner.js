@@ -1,19 +1,22 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import {css} from '@emotion/react'
 import PropTypes from 'prop-types'
 import BackgroundImage from 'gatsby-background-image'
 
-const Banner = ({ children, heroImage, headerText, className }) => {
+const Banner = ({ children, heroImage, className }) => {
   const newImageData = heroImage
 
-  const backgroundFluidImageStack = [newImageData, `linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5))`].reverse()
+  const backgroundFluidImageStack = [
+    newImageData,
+    `linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5))`,
+  ].reverse()
 
   return (
     <BackgroundImage
       Tag="section"
       className={[
-        className, 'container-fluid d-flex justify-content-center'
+        className,
+        'container-fluid d-flex justify-content-center',
       ].join(' ')}
       fluid={backgroundFluidImageStack}
       critical
@@ -24,7 +27,7 @@ const Banner = ({ children, heroImage, headerText, className }) => {
   )
 }
 
-//align-items-end align-items-sm-center
+// align-items-end align-items-sm-center
 
 const HeroBanner = styled(Banner)`
   background-repeat: no-repeat;

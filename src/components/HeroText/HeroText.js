@@ -2,48 +2,44 @@ import React from 'react'
 import styled from '@emotion/styled'
 import PropTypes from 'prop-types'
 
-const HeroText = ({ children, headerText, className, xtraWide }) => {
-  const colums = xtraWide ? 12 : 10
-
-  return (
-    <div className={'container-fluid'}>
+const HeroText = ({ headerText, className }) => (
+  <div className="container-fluid">
     <div className={[className, 'container h-100 py-5'].join(' ')}>
-    <div className={['row h-100'].join(' ')}>
-      <div
-        className={`h-100 col-12 col-sm-6 d-flex align-items-end align-items-sm-center`}
-      >
-        <h1
-          className={[className, 'display-3 text-uppercase text-center text-sm-start m-0',
-          ].join(' ')}
-        >
-          {headerText}
-        </h1>
-    </div>
+      <div className={['row h-100'].join(' ')}>
+        <div className="h-100 col-12 col-sm-6 d-flex align-items-end align-items-sm-center">
+          <h1
+            className={[
+              className,
+              'display-3 text-uppercase text-center text-sm-start m-0',
+            ].join(' ')}
+          >
+            {headerText}
+          </h1>
+        </div>
+      </div>
     </div>
   </div>
-  </div>
-
 )
-        }
 
 const StyledHeroText = styled(HeroText)`
-  h1 {color: white;}
+  h1 {
+    color: white;
+  }
   @media (max-width: 576px) {
-    {/* To deal with bootstrap padding and gatsby-background-image (adding extra padding in on hero on mobile) use conditional to remove it */}
+     {
+      /* To deal with bootstrap padding and gatsby-background-image (adding extra padding in on hero on mobile) use conditional to remove it */
+    }
     padding-left: 0;
     padding-right: 0;
-    h1 {color: #6c757d;}
+    h1 {
+      color: #6c757d;
+    }
   }
-
 `
 
 export default StyledHeroText
 
 HeroText.propTypes = {
-  /**
-   * Text to go within the background image
-   */
-  children: PropTypes.object,
   /**
    * Button contents
    */
@@ -55,7 +51,6 @@ HeroText.propTypes = {
 }
 
 HeroText.defaultProps = {
-  children: '',
   headerText: 'HEADER PLACEHOLDER',
   className: '',
 }

@@ -6,8 +6,8 @@ import styled from '@emotion/styled'
 
 const MainButton = ({ primary, className, label, onClick, bs, small }) => {
   const mode = primary
-    ? 'btn btn-outline-highlight mainbutton'
-    : 'btn btn-outline-gray'
+    ? 'btn btn-outline-highlight mainbutton mx-auto d-block'
+    : 'btn btn-outline-gray mx-auto d-block'
 
   return (
     <button
