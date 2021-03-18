@@ -23,7 +23,6 @@ import TextHeader from '../components/TextHeader'
 import TextParagraph from '../components/TextParagraph'
 import TextLead from '../components/TextAnchor'
 import SimpleIcon from '../components/SimpleIcon'
-import OverlayBackground from '../components/OverlayBackground'
 
 const IndexPage = ({ data }) => {
   // Define Images
@@ -89,6 +88,7 @@ const IndexPage = ({ data }) => {
         css={css`
           background-position: top right;
         `}
+        overlay
       >
         <HeroText headerText="Great Careers Start Here" xtraWide />
       </HeroBanner>
