@@ -6,7 +6,6 @@ import styled from '@emotion/styled'
 
 import Layout from '../components/layout'
 import HeroBackground from '../components/HeroBackground'
-import OverlayBackground from '../components/OverlayBackground'
 import ContentBlockContactPage from '../components/ContentBlockContactPage'
 import TextHeader from '../components/TextHeader'
 import TextParagraph from '../components/TextParagraph'
@@ -15,8 +14,9 @@ import TriSection from '../components/TriSection'
 import SimpleIcon from '../components/SimpleIcon'
 import TextAnchor from '../components/TextAnchor'
 import SEO from '../components/seo'
-
+import MailChimpSignUp from '../components/MailChimpSignUp'
 import inputData from '../pagesInput/contact'
+import CalendlyButton from '../components/CalendlyButton'
 
 const ContactPage = ({ data, className }) => {
   const heroImage = data.contactBackground.childImageSharp.fluid
@@ -24,29 +24,31 @@ const ContactPage = ({ data, className }) => {
 
   return (
     <Layout className={className} contact>
-    <SEO title="Contact Details" description="Contact Nikki Thomas to learn how you can create the career you want.  Email:nicola@essentialcoaching.co.uk" />
+      <SEO
+        title="Contact Details"
+        description="Contact Nikki Thomas to learn how you can create the career you want.  Email:nicola@essentialcoaching.co.uk"
+      />
       <HeroBackground heroImage={heroImage} backgroundSide="left">
-        <OverlayBackground>
-          <ContentBlockContactPage bs="d-flex align-items-center bumpdown">
-            <ContentText className="">
-              <TextHeader mainHeader="Let's connect..." />
-              <TextParagraph paragraphs={openParagraph} />
-            </ContentText>
-            <TriSection noCards={3}>
-              {contactOptionsArray.map(item => (
-                <TextAnchor href={item.href}>
-                  <SimpleIcon icon={item.icon} />
-                  <TextHeader mainHeader={item.header} size="v-small" />
-                  <TextParagraph
-                    paragraphs={item.text}
-                    small
-                    bs="text-center text-break"
-                  />
-                </TextAnchor>
-              ))}
-            </TriSection>
-          </ContentBlockContactPage>
-        </OverlayBackground>
+        <ContentBlockContactPage bs="d-flex align-items-center">
+          <ContentText className="">
+            <TextHeader mainHeader="Let's connect..." />
+            <TextParagraph paragraphs={openParagraph} />
+            <CalendlyButton />
+          </ContentText>
+          <TriSection noCards={3}>
+            {contactOptionsArray.map(item => (
+              <TextAnchor href={item.href}>
+                <SimpleIcon icon={item.icon} />
+                <TextParagraph
+                  paragraphs={item.text}
+                  bs="text-center text-break text-highlight"
+                  small
+                />
+              </TextAnchor>
+            ))}
+          </TriSection>
+          <MailChimpSignUp />
+        </ContentBlockContactPage>
       </HeroBackground>
     </Layout>
   )
@@ -81,4 +83,5 @@ export const pageQuery = graphql`
 
 ContactPage.propTypes = {
   data: PropTypes.object,
+  className: PropTypes.string,
 }

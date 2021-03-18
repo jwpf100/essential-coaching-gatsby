@@ -5,13 +5,20 @@ import BackgroundImage from 'gatsby-background-image'
 
 const Banner = ({ children, heroImage, className }) => {
   const newImageData = heroImage
+  const backgroundFluidImageStack = [
+    newImageData,
+    `linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75))`,
+  ].reverse()
 
   return (
     <BackgroundImage
       Tag="section"
-      className={[className, ''].join(' ')}
-      fluid={newImageData}
-      critical
+      className={[
+        className,
+        'container-fluid d-flex justify-content-center',
+      ].join(' ')}
+      fluid={backgroundFluidImageStack}
+      loading="eager"
       fadeIn={false}
     >
       {children}
@@ -38,10 +45,6 @@ Banner.propTypes = {
    * Button contents
    */
   heroImage: PropTypes.object,
-  /**
-   * Button contents
-   */
-  headerText: PropTypes.string,
   /**
    * emotion styling classes
    */

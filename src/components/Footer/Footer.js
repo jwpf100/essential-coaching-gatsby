@@ -2,43 +2,34 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from '@emotion/styled'
 import TextAnchor from '../TextAnchor'
-import TextParagraph from '../TextParagraph'
-
-// import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
-// import {
-//   faPhone,
-  
-//   faEnvelope,
-  
-// } from '@fortawesome/free-solid-svg-icons'
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import TextHeader from '../TextHeader'
 
 const Footer = ({ className }) => (
   <footer className={className}>
     <div className="container-fluid bg-secondary border-top footer">
-      <div className="row footer-contact justify-content-center">
+      <div className="row pt-3 justify-content-center">
         <div className="col-12 text-center">
-          <h4 className="py-3">Contact me</h4>
+          <TextHeader mainHeader="Contact me" size="small" />
         </div>
       </div>
-      <div className="row justify-content-center align-items-center pb-3">
-        <div className="col-xs-12 col-md-4 col-lg-3 pb-3 pb-md-0 text-center">
-        <TextAnchor href="mailto:nikki@essentialcoaching.co.uk?subject=Essential Coaching Enquiry">
-            <i className={['icon-envelope', 'me-2'].join(' ')} />       
+      <div className="row justify-content-center align-items-center py-3">
+        <div className="col-3">
+          <TextAnchor href="mailto:nikki@essentialcoaching.co.uk?subject=Essential Coaching Enquiry">
+            <i className={['icon-envelope', 'me-2'].join(' ')} />
           </TextAnchor>
         </div>
-        <div className="col-xs-12 col-md-4 col-lg-3 pb-3 pb-md-0 text-center">
-        <TextAnchor href="tel:+44-7413-357-217">
-            <i className={['icon-phone', 'me-2'].join(' ')} />            
+        <div className="col-3">
+          <TextAnchor href="tel:+44-7413-357-217">
+            <i className={['icon-phone', 'me-2'].join(' ')} />
           </TextAnchor>
         </div>
-        <div className="col-xs-12 col-md-4 col-lg-3 pb-3 pb-md-0 text-center">
+        <div className="col-3">
           <TextAnchor href="https://www.linkedin.com/in/nikki-thomas-essentialcoaching/">
             <i className={['icon-social-linkedin', 'me-2'].join(' ')} />
           </TextAnchor>
         </div>
       </div>
-      <div className="row footer-contact justify-content-center align-items-center bg-highlight">
+      <div className="row justify-content-start align-items-center bg-highlight">
         <div className="text-light footer-copyright text-center py-3">
           © Essential Coaching
         </div>
@@ -48,11 +39,6 @@ const Footer = ({ className }) => (
 )
 
 const StyledFooter = styled(Footer)`
-   {
-    /* box-shadow: 0px -1px 5px 0px rgba(247, 137, 47, 0.5); 
-    border-top: rgba(247, 137, 47, 0.5);
-    */
-  }
   font-size: 1.25rem;
   h4 {
     font-family: 'Lato';

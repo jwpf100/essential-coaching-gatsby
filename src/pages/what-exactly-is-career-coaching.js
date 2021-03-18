@@ -19,7 +19,10 @@ const BlogFirstPage = () => {
   const tagList = blog.tags.map(tag => tag.name).join(' / ')
   return (
     <Layout>
-    <SEO title="What is Career Coaching?" description="What is the point of coaching and how is it different to mentoring or therapy?" />
+      <SEO
+        title="What is Career Coaching?"
+        description="What is the point of coaching and how is it different to mentoring or therapy?"
+      />
       <ContentBlock>
         <TextHeader mainHeader={blog.title} size="Large" />
         <BlogPostImage src={`blog/${blog.image_filename}.png`} />

@@ -33,6 +33,11 @@ module.exports = {
       },
       __key: "images",
     },
+    {resolve: 'gatsby-plugin-mailchimp',
+  options: {
+    endpoint: 'https://essentialcoaching.us17.list-manage.com/subscribe/post?u=3065fd3ec7c12f77f82258743&amp;id=541829f297'
+  }
+}
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
