@@ -1,7 +1,7 @@
 import React from 'react'
-import { graphql, useScrollRestoration } from 'gatsby'
+import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
-import {css} from '@emotion/react'
+import { css } from '@emotion/react'
 
 import PropTypes from 'prop-types'
 import Layout from '../components/layout'
@@ -16,11 +16,7 @@ import TextQuote from '../components/TextQuote'
 import inputData from '../pagesInput/about-me'
 import ContentIconList from '../components/ContentIconList'
 
-
 const AboutMePage = ({ data }) => {
-
-  const scrollRestoration = useScrollRestoration(`scroll-restoration-key`);
-
   const heroImage = data.projectHero.childImageSharp.fluid
   const image1 = data.natural.childImageSharp.fluid
   const image2 = data.timechange.childImageSharp.fluid
@@ -100,12 +96,20 @@ const AboutMePage = ({ data }) => {
   ]
 
   return (
-    <Layout {...scrollRestoration}>
-      <SEO title="Nikki Thomas" description="Learn more about Nikki Thomas, career coach, workplace psychologist and founder of Essential Coaching." />
+    <Layout>
+      <SEO
+        title="Nikki Thomas"
+        description="Learn more about Nikki Thomas, career coach, workplace psychologist and founder of Essential Coaching."
+      />
       {/* ******** */}
       {/* Hero Banner Image */}
       {/* ******** */}
-      <HeroBanner heroImage={heroImage} css={css`background-position: top left`} />
+      <HeroBanner
+        heroImage={heroImage}
+        css={css`
+          background-position: top left;
+        `}
+      />
       {/* ******** */}
       {/* Lead Blurb */}
       {/* ******** */}

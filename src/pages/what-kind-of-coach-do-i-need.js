@@ -19,7 +19,10 @@ const BlogFirstPage = () => {
   const tagList = blog.tags.map(tag => tag.name).join(' / ')
   return (
     <Layout>
-    <SEO title="What kind of careers coach do I need" description="One of the most important things to find out when you’re searching for a coach is whether or not you think you’ll work well with them. A good coach will be clear with you on their style and ways of working so that you can decide whether or not you’ll be a good fit." />
+      <SEO
+        title="What kind of careers coach do I need"
+        description="One of the most important things to find out when you’re searching for a coach is whether or not you think you’ll work well with them. A good coach will be clear with you on their style and ways of working so that you can decide whether or not you’ll be a good fit."
+      />
       <ContentBlock>
         <TextHeader mainHeader={blog.title} size="Large" />
         <BlogPostImage src={`blog/${blog.image_filename}.png`} />
