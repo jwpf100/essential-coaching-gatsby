@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { graphql, navigate, Link } from 'gatsby'
+import { graphql, navigate } from 'gatsby'
 import PropTypes from 'prop-types'
 import {css} from '@emotion/react'
 
@@ -80,9 +80,7 @@ const IndexPage = ({ data }) => {
       {/* Hero Banner Image */}
       {/* ******** */}
       <HeroBanner heroImage={heroImage} css={css`background-position: top right`}>
-      <OverlayBackground>
-        <HeroText headerText="Great Careers Start Here" />
-        </OverlayBackground>
+            <HeroText headerText="Great Careers Start Here" xtraWide/>
       </HeroBanner>
       {/* ******** */}
       {/* Lead Blurb */}
@@ -95,7 +93,6 @@ const IndexPage = ({ data }) => {
             bs="mx-auto d-block"
             label="Book a free discovery call"
             primary
-            onClick={() => navigate('/aboutme/')}
             href="/contact/"
           />
         </ContentText>
