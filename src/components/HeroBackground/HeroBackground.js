@@ -18,7 +18,7 @@ const Banner = ({ children, heroImage, className }) => {
         'container-fluid d-flex justify-content-center',
       ].join(' ')}
       fluid={backgroundFluidImageStack}
-      critical
+      loading="eager"
       fadeIn={false}
     >
       {children}

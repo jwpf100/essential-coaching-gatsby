@@ -15,6 +15,7 @@ import NavBar from './NavBar/NavBar'
 import Footer from './Footer/Footer'
 import MailChimpSignUp from './MailChimpSignUp'
 import CalendlyWidget from './CalendlyWidget'
+import ContentBlock from './ContentBlock'
 
 // Add Fonts
 
@@ -35,7 +36,9 @@ const Layout = ({ children, contact, className }) => {
         />
         <NavBar />
         <main className={className}>{children}</main>
-        <MailChimpSignUp />
+        <ContentBlock>
+          <MailChimpSignUp />
+        </ContentBlock>
         <Footer />
         <CalendlyWidget />
       </>
@@ -45,8 +48,10 @@ const Layout = ({ children, contact, className }) => {
     <>
       <Global
         styles={css`
-          main {
-            /* color: #6c757d; */
+          @media (max-width: 768px) {
+            main {
+              margin-top: 70px;
+            }
           }
         `}
       />
