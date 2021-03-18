@@ -28,12 +28,12 @@ function SEO({ description, lang, meta, title, image: metaImage, pathname }) {
   )
 
   const metaDescription = description || site.siteMetadata.description
-  
+
   const image =
-  metaImage && metaImage.src
-    ? `${site.siteMetadata.siteUrl}${metaImage.src}`
-    : null
-    
+    metaImage && metaImage.src
+      ? `${site.siteMetadata.siteUrl}${metaImage.src}`
+      : null
+
   const canonical = pathname ? `${site.siteMetadata.siteUrl}${pathname}` : null
 
   const defaultTitle = site.siteMetadata?.title
@@ -49,7 +49,7 @@ function SEO({ description, lang, meta, title, image: metaImage, pathname }) {
         canonical
           ? [
               {
-                rel: "canonical",
+                rel: 'canonical',
                 href: canonical,
               },
             ]
@@ -89,39 +89,48 @@ function SEO({ description, lang, meta, title, image: metaImage, pathname }) {
           content: metaDescription,
         },
         {
-          name: "keywords",
-          content: site.siteMetadata.keywords.join(","),
+          name: 'keywords',
+          content: site.siteMetadata.keywords.join(','),
         },
-      ]      
+      ]
         .concat(
           metaImage
             ? [
                 {
-                  property: "og:image",
+                  property: 'og:image',
                   content: image,
                 },
                 {
-                  property: "og:image:width",
+                  property: 'og:image:width',
                   content: metaImage.width,
                 },
                 {
-                  property: "og:image:height",
+                  property: 'og:image:height',
                   content: metaImage.height,
                 },
                 {
-                  name: "twitter:card",
-                  content: "summary_large_image",
+                  name: 'twitter:card',
+                  content: 'summary_large_image',
                 },
               ]
             : [
                 {
-                  name: "twitter:card",
-                  content: "summary",
+                  name: 'twitter:card',
+                  content: 'summary',
                 },
               ]
         )
         .concat(meta)}
-    />
+    >
+      <link
+        href="https://calendly.com/assets/external/widget.css"
+        rel="stylesheet"
+      />
+      <script
+        src="https://calendly.com/assets/external/widget.js"
+        type="text/javascript"
+      />
+    </Helmet>
   )
 }
 
@@ -142,6 +151,7 @@ SEO.propTypes = {
     width: PropTypes.number.isRequired,
     pathname: PropTypes.string,
   }),
+  pathname: PropTypes.string,
 }
 
 export default SEO

@@ -1,8 +1,8 @@
 import React from 'react'
 
-import { graphql, navigate, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
-import {css} from '@emotion/react'
+import { css } from '@emotion/react'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
@@ -75,13 +75,21 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="Great Careers Start Here!" description="Career coaching for people who want to create a career they love." />
+      <SEO
+        title="Great Careers Start Here!"
+        description="Career coaching for people who want to create a career they love."
+      />
       {/* ******** */}
       {/* Hero Banner Image */}
       {/* ******** */}
-      <HeroBanner heroImage={heroImage} css={css`background-position: top right`}>
-      <OverlayBackground>
-        <HeroText headerText="Great Careers Start Here" />
+      <HeroBanner
+        heroImage={heroImage}
+        css={css`
+          background-position: top right;
+        `}
+      >
+        <OverlayBackground>
+          <HeroText headerText="Great Careers Start Here" />
         </OverlayBackground>
       </HeroBanner>
       {/* ******** */}
@@ -95,7 +103,6 @@ const IndexPage = ({ data }) => {
             bs="mx-auto d-block"
             label="Book a free discovery call"
             primary
-            onClick={() => navigate('/aboutme/')}
             href="/contact/"
           />
         </ContentText>
@@ -115,7 +122,6 @@ const IndexPage = ({ data }) => {
             bs="mx-auto d-block"
             label="My Story"
             primary
-            onClick={() => navigate('/about-me/')}
             href="/aboutme/"
           />
         </ContentTextImage>
@@ -138,7 +144,6 @@ const IndexPage = ({ data }) => {
           bs="mx-auto d-block"
           label="How I can help"
           primary
-          onClick={() => navigate('/career-coaching/')}
           href="/career-coaching/"
         />
       </ContentBlock>
@@ -162,13 +167,6 @@ const IndexPage = ({ data }) => {
             />
           ))}
         </TriSection>
-        {/* <MainButton
-          bs="mx-auto d-block"
-          label="The Essential Blog"
-          primary
-          onClick={() => navigate('/the-essential-career-blog/')}
-          href="/the-essential-career-blog/"
-        /> */}
       </ContentBlock>
     </Layout>
   )
