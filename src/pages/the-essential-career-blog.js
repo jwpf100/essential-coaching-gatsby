@@ -42,7 +42,10 @@ const BlogHomePage = ({ data }) => {
 
   return (
     <Layout>
-    <SEO title="The Essential Career Blog" description="Everything you need to know about career coaching, and how to make your career the best it can be." />
+      <SEO
+        title="The Essential Career Blog"
+        description="Everything you need to know about career coaching, and how to make your career the best it can be."
+      />
       <TextHeader mainHeader="The Essential Blog" size="Large" />
       {!isLoading ? (
         <ContentBlock>
