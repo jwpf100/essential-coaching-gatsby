@@ -2,7 +2,7 @@ import React from 'react'
 
 import { graphql, navigate, Link } from 'gatsby'
 import PropTypes from 'prop-types'
-import {css} from '@emotion/react'
+import { css } from '@emotion/react'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
@@ -23,6 +23,7 @@ import TextParagraph from '../components/TextParagraph'
 import TextLead from '../components/TextAnchor'
 import SimpleIcon from '../components/SimpleIcon'
 import OverlayBackground from '../components/OverlayBackground'
+import CalendlyWidget from '../components/CalendlyWidget'
 
 const IndexPage = ({ data }) => {
   // Define Images
@@ -75,13 +76,21 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="Great Careers Start Here!" description="Career coaching for people who want to create a career they love." />
+      <SEO
+        title="Great Careers Start Here!"
+        description="Career coaching for people who want to create a career they love."
+      />
       {/* ******** */}
       {/* Hero Banner Image */}
       {/* ******** */}
-      <HeroBanner heroImage={heroImage} css={css`background-position: top right`}>
-      <OverlayBackground>
-        <HeroText headerText="Great Careers Start Here" />
+      <HeroBanner
+        heroImage={heroImage}
+        css={css`
+          background-position: top right;
+        `}
+      >
+        <OverlayBackground>
+          <HeroText headerText="Great Careers Start Here" />
         </OverlayBackground>
       </HeroBanner>
       {/* ******** */}
