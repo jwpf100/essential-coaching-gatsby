@@ -2,7 +2,7 @@ module.exports = {
   globals: {
     __PATH_PREFIX__: true,
   },
-  extends: ['airbnb', 'prettier', 'prettier/react'],
+  extends: ['airbnb', 'prettier'],
   parser: 'babel-eslint',
   parserOptions: {
     ecmaVersion: 2020,
@@ -100,6 +100,14 @@ module.exports = {
       {
         avoidEscape: true,
         allowTemplateLiterals: true,
+      },
+    ],
+    'import/no-extraneous-dependencies': [
+      0,
+      {
+        devDependencies: false,
+        optionalDependencies: false,
+        peerDependencies: false,
       },
     ],
     'prettier/prettier': [

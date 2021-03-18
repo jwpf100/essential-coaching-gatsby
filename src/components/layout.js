@@ -13,13 +13,14 @@ import { Global, css } from '@emotion/react'
 
 import NavBar from './NavBar/NavBar'
 import Footer from './Footer/Footer'
-import MailChimpSignUp from '../components/MailChimpSignUp'
+import MailChimpSignUp from './MailChimpSignUp'
+import CalendlyWidget from './CalendlyWidget'
 
-//Add Fonts
+// Add Fonts
 
-import "@fontsource/lato/400.css"
-import "@fontsource/merriweather/300.css"
-import "simple-line-icons/css/simple-line-icons.css"
+import '@fontsource/lato/400.css'
+import '@fontsource/merriweather/300.css'
+import 'simple-line-icons/css/simple-line-icons.css'
 
 const Layout = ({ children, contact, className }) => {
   
@@ -37,6 +38,7 @@ const Layout = ({ children, contact, className }) => {
         <main className={className}>{children}</main>
         <MailChimpSignUp />
         <Footer />
+        <CalendlyWidget />
       </>
     )
   }
