@@ -33,6 +33,9 @@ const HeroBanner = styled(Banner)`
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 60vh;
+  @media (max-width: 768px) {
+    min-height: 50vh;
+  }
 `
 
 export default HeroBanner
@@ -46,10 +49,6 @@ Banner.propTypes = {
    * Button contents
    */
   heroImage: PropTypes.object,
-  /**
-   * Button contents
-   */
-  headerText: PropTypes.string,
   /**
    * emotion styling classes
    */
