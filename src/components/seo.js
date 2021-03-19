@@ -121,16 +121,7 @@ function SEO({ description, lang, meta, title, image: metaImage, pathname }) {
               ]
         )
         .concat(meta)}
-    >
-      <link
-        href="https://calendly.com/assets/external/widget.css"
-        rel="stylesheet"
-      />
-      <script
-        src="https://calendly.com/assets/external/widget.js"
-        type="text/javascript"
-      />
-    </Helmet>
+    />
   )
 }
 
