@@ -22,3 +22,9 @@ $container-max-widths: (
 );
 
 $carousel-control-color: black;
+
+:root {
+  scroll-behavior: auto;
+}
+
+$enable-smooth-scroll: false;
