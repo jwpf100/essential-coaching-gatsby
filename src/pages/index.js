@@ -30,6 +30,9 @@ const IndexPage = ({ data }) => {
   const testimonialImage1 = data.testimonialImage1.childImageSharp.fluid
   const testimonialImage2 = data.testimonialImage2.childImageSharp.fluid
   const testimonialImage3 = data.testimonialImage3.childImageSharp.fluid
+  const blogImage1 = data.blogImage1.childImageSharp.fluid
+  const blogImage2 = data.blogImage2.childImageSharp.fluid
+  const blogImage3 = data.blogImage3.childImageSharp.fluid
 
   const {
     headerLead,
@@ -50,6 +53,7 @@ const IndexPage = ({ data }) => {
   } = inputData
 
   const { blogArray } = BlogInputData
+  const blogImageArray = [blogImage1, blogImage2, blogImage3]
 
   const testimonialArray = [
     {
@@ -159,11 +163,12 @@ const IndexPage = ({ data }) => {
       <ContentBlock>
         <TextHeader size="large" mainHeader={blogSectionTitle} />
         <TriSection noCards={3} xtraWide>
-          {blogArray.map(blog => (
+          {blogArray.map((blog, index) => (
             <FeaturedBlogPost
               key={blog._id}
               blogInfo={blog}
-              src={`blog/${blog.image_filename}.png`}
+              // src={`blog/${blog.image_filename}.png`}
+              image={blogImageArray[index]}
             />
           ))}
         </TriSection>
@@ -239,6 +244,15 @@ export const pageQuery = graphql`
       relativePath: { eq: "testimonials/lucy-square-300.jpg" }
     ) {
       ...fluidImage
+    }
+    blogImage1: file(relativePath: { eq: "blog/blog1.png" }) {
+      ...profileImage
+    }
+    blogImage2: file(relativePath: { eq: "blog/blog2.png" }) {
+      ...profileImage
+    }
+    blogImage3: file(relativePath: { eq: "blog/blog3.png" }) {
+      ...profileImage
     }
   }
 `
