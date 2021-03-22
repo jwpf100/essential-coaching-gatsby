@@ -26,7 +26,6 @@ import SimpleIcon from '../components/SimpleIcon'
 
 const IndexPage = ({ data }) => {
   // Define Images
-  const heroImage = data.projectHero.childImageSharp.fluid
   const profileImage = data.profilePic.childImageSharp.fluid
   const testimonialImage1 = data.testimonialImage1.childImageSharp.fluid
   const testimonialImage2 = data.testimonialImage2.childImageSharp.fluid
@@ -73,6 +72,19 @@ const IndexPage = ({ data }) => {
     },
   ]
 
+  // Images (mobile and full size) for hero banner
+
+  const sources = [
+    {
+      ...data.mobileImage.childImageSharp.fluid,
+      media: `(max-width: 540px)`,
+    },
+    {
+      ...data.desktopImage.childImageSharp.fluid,
+      media: `(min-width: 541px)`,
+    },
+  ]
+
   return (
     <Layout>
       <SEO
@@ -84,11 +96,10 @@ const IndexPage = ({ data }) => {
       {/* ******** */}
 
       <HeroBanner
-        heroImage={heroImage}
+        sources={sources}
         css={css`
           background-position: top right;
         `}
-        overlay
       >
         <HeroText headerText="Great Careers Start Here" xtraWide />
       </HeroBanner>
@@ -183,12 +194,33 @@ export const profileImageFragment = graphql`
   }
 `
 
+export const mobileImageFragment = graphql`
+  fragment mobileImage on File {
+    childImageSharp {
+      fluid(maxWidth: 540, quality: 100) {
+        ...GatsbyImageSharpFluid
+      }
+    }
+  }
+`
+
 // Select Images using pagequery below.
 
 export const pageQuery = graphql`
   query {
-    projectHero: file(relativePath: { eq: "hero/hero-brick.jpg" }) {
-      ...fluidImage
+    mobileImage: file(relativePath: { eq: "hero/hero-brick-mob-80.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 1600, quality: 100) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    desktopImage: file(relativePath: { eq: "hero/hero-brick.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 540, quality: 100) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
     }
     profilePic: file(relativePath: { eq: "index/nikki-profile-comp.jpg" }) {
       ...profileImage
