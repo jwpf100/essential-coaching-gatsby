@@ -16,7 +16,12 @@ const BlogHomePage = ({ data }) => {
   const [isLoading, setIsLoading] = useState(false)
   const [blogPosts, setBlogPosts] = useState(blogArray)
 
+  const blogImage1 = data.blogImage1.childImageSharp.fluid
+  const blogImage2 = data.blogImage2.childImageSharp.fluid
+  const blogImage3 = data.blogImage3.childImageSharp.fluid
+
   const imageUrl = 'images/blog/'
+  const blogImageArray = [blogImage1, blogImage2, blogImage3]
 
   // Arrange items by date - most recent first
   const sortPostsMostRecent = array =>
@@ -50,11 +55,12 @@ const BlogHomePage = ({ data }) => {
       {!isLoading ? (
         <ContentBlock>
           <BlogPostContainer xtraWide cards={3}>
-            {blogPosts.map(blog => (
+            {blogPosts.map((blog, index) => (
               <FeaturedBlogPost
                 key={blog._id}
                 blogInfo={blog}
-                src={`blog/${blog.image_filename}.png`}
+                // src={`blog/${blog.image_filename}.png`}
+                image={blogImageArray[index]}
               />
             ))}
           </BlogPostContainer>
@@ -62,11 +68,12 @@ const BlogHomePage = ({ data }) => {
       ) : (
         <ContentBlock>
           <BlogPostContainer xtraWide cards={3}>
-            {blogPosts.map(blog => (
+            {blogPosts.map((blog, index) => (
               <FeaturedBlogPost
                 key={blog._id}
                 blogInfo={blog}
-                src={`blog/${blog.image_filename}.png`}
+                // src={`blog/${blog.image_filename}.png`}
+                image={blogImageArray[index]}
               />
             ))}
           </BlogPostContainer>
@@ -96,13 +103,13 @@ export const pageQuery = graphql`
     projectHero: file(relativePath: { eq: "hero/shoots.jpg" }) {
       ...fluidImage
     }
-    blog1: file(relativePath: { eq: "blog/blog1.png" }) {
+    blogImage1: file(relativePath: { eq: "blog/blog1.png" }) {
       ...blogImageMain
     }
-    blog2: file(relativePath: { eq: "blog/blog2.png" }) {
+    blogImage2: file(relativePath: { eq: "blog/blog2.png" }) {
       ...blogImageMain
     }
-    blog3: file(relativePath: { eq: "blog/blog2.png" }) {
+    blogImage3: file(relativePath: { eq: "blog/blog3.png" }) {
       ...blogImageMain
     }
   }
