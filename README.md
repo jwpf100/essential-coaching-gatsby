@@ -37,21 +37,3 @@ To Visit App:
 ## Reflection
 
 TBC
-
-I managed to work this out in the end after a lot of Googling. It appears not to be a scrollRestoration issue but a Bootstrap issue. In bootstrap/scss/\_reboot.scss there's the following code:
-
-    :root {
-      font-size: $font-size-root;
-
-      @if $enable-smooth-scroll {
-        @media (prefers-reduced-motion: no-preference) {
-          scroll-behavior: smooth;
-        }
-      }
-    }
-
-This can be turned off either using `$enable-reduced-motion: true;` or `$enable-smooth-scroll: false;` in bootstrap overrides. Testing now to see what knock-ons there are.
-
-https://getbootstrap.com/docs/4.1/getting-started/accessibility/
-
-https://drafts.csswg.org/mediaqueries-5/#prefers-reduced-motion
