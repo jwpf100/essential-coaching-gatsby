@@ -7,7 +7,6 @@ import PropTypes from 'prop-types'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import HeroBanner from '../components/HeroBanner'
-import HeroText from '../components/HeroText'
 import TextHeader from '../components/TextHeader'
 import TextParagraph from '../components/TextParagraph'
 import ContentBlock from '../components/ContentBlock'
@@ -18,6 +17,7 @@ import inputData from '../pagesInput/about-me'
 import ContentIconList from '../components/ContentIconList'
 
 const AboutMePage = ({ data }) => {
+  const heroImage = data.projectHero.childImageSharp.fluid
   const image1 = data.natural.childImageSharp.fluid
   const image2 = data.timechange.childImageSharp.fluid
   const image3 = data.wtrek.childImageSharp.fluid
@@ -95,19 +95,6 @@ const AboutMePage = ({ data }) => {
     },
   ]
 
-  // Images (mobile and full size) for hero banner
-
-  const sources = [
-    {
-      ...data.mobileImage.childImageSharp.fluid,
-      media: `(max-width: 540px)`,
-    },
-    {
-      ...data.desktopImage.childImageSharp.fluid,
-      media: `(min-width: 541px)`,
-    },
-  ]
-
   return (
     <Layout>
       <SEO
@@ -118,7 +105,7 @@ const AboutMePage = ({ data }) => {
       {/* Hero Banner Image */}
       {/* ******** */}
       <HeroBanner
-        sources={sources}
+        heroImage={heroImage}
         css={css`
           background-position: top left;
         `}
@@ -196,19 +183,8 @@ export default AboutMePage
 
 export const pageQuery = graphql`
   query {
-    mobileImage: file(relativePath: { eq: "hero/hero-garden-mob-80.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 540, quality: 100) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
-      }
-    }
-    desktopImage: file(relativePath: { eq: "hero/hero-garden.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 1600, quality: 100) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
-      }
+    projectHero: file(relativePath: { eq: "hero/hero-garden.jpg" }) {
+      ...fluidImage
     }
     compass: file(relativePath: { eq: "aboutme/compass-300.jpg" }) {
       ...ILoveImage

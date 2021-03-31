@@ -22,6 +22,7 @@ import inputData from '../pagesInput/career-coaching'
 import ContentIconList from '../components/ContentIconList'
 
 const HowICanHelpPage = ({ data }) => {
+  const heroImage = data.projectHero.childImageSharp.fluid
   const blogImage = data.blogImage1.childImageSharp.fluid
 
   const {
@@ -68,19 +69,6 @@ const HowICanHelpPage = ({ data }) => {
     },
   ]
 
-  // Images (mobile and full size) for hero banner
-
-  const sources = [
-    {
-      ...data.mobileImage.childImageSharp.fluid,
-      media: `(max-width: 540px)`,
-    },
-    {
-      ...data.desktopImage.childImageSharp.fluid,
-      media: `(min-width: 541px)`,
-    },
-  ]
-
   return (
     <Layout>
       <SEO
@@ -88,7 +76,7 @@ const HowICanHelpPage = ({ data }) => {
         description="What is career coaching and how can it help you?"
       />
       <HeroBanner
-        sources={sources}
+        heroImage={heroImage}
         css={css`
           background-position: center bottom;
         `}
@@ -197,19 +185,8 @@ export const blogImageFragment = graphql`
 
 export const pageQuery = graphql`
   query {
-    mobileImage: file(relativePath: { eq: "hero/hero-shoots-mob-80.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 540, quality: 100) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
-      }
-    }
-    desktopImage: file(relativePath: { eq: "hero/hero-shoots.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 1600, quality: 100) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
-      }
+    projectHero: file(relativePath: { eq: "hero/shoots.jpg" }) {
+      ...fluidImage
     }
     profilePic: file(relativePath: { eq: "index/nikki-profile-comp.jpg" }) {
       ...fluidImage
