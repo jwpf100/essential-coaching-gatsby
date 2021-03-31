@@ -3,8 +3,8 @@ import styled from '@emotion/styled'
 import PropTypes from 'prop-types'
 import BackgroundImage from 'gatsby-background-image'
 
-const Banner = ({ children, sources, heroImage, className, overlay }) => {
-  const newImageData = sources
+const Banner = ({ children, heroImage, className, overlay }) => {
+  const newImageData = heroImage
 
   const backgroundFluidImageStack = !overlay
     ? newImageData
@@ -34,7 +34,7 @@ const HeroBanner = styled(Banner)`
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 60vh;
-  @media (max-width: 541px) {
+  @media (max-width: 768px) {
     min-height: 50vh;
   }
 `
@@ -46,10 +46,6 @@ Banner.propTypes = {
    * Text to go within the background image
    */
   children: PropTypes.object,
-  /**
-   * Button contents
-   */
-  sources: PropTypes.array,
   /**
    * Button contents
    */

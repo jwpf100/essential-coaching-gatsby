@@ -26,13 +26,11 @@ import SimpleIcon from '../components/SimpleIcon'
 
 const IndexPage = ({ data }) => {
   // Define Images
+  const heroImage = data.projectHero.childImageSharp.fluid
   const profileImage = data.profilePic.childImageSharp.fluid
   const testimonialImage1 = data.testimonialImage1.childImageSharp.fluid
   const testimonialImage2 = data.testimonialImage2.childImageSharp.fluid
   const testimonialImage3 = data.testimonialImage3.childImageSharp.fluid
-  const blogImage1 = data.blogImage1.childImageSharp.fluid
-  const blogImage2 = data.blogImage2.childImageSharp.fluid
-  const blogImage3 = data.blogImage3.childImageSharp.fluid
 
   const {
     headerLead,
@@ -53,7 +51,6 @@ const IndexPage = ({ data }) => {
   } = inputData
 
   const { blogArray } = BlogInputData
-  const blogImageArray = [blogImage1, blogImage2, blogImage3]
 
   const testimonialArray = [
     {
@@ -76,23 +73,6 @@ const IndexPage = ({ data }) => {
     },
   ]
 
-  // Images (mobile and full size) for hero banner
-
-  /*  const sources = [
-    {
-      ...data.mobileImage.childImageSharp.fluid,
-      media: `(max-width: 540px)`,
-    },
-    {
-      ...data.desktopImage.childImageSharp.fluid,
-      media: `(min-width: 541px)`,
-    },
-  ]
-
- */
-
-  const sources = data.desktopImage.childImageSharp.fluid
-
   return (
     <Layout>
       <SEO
@@ -104,7 +84,7 @@ const IndexPage = ({ data }) => {
       {/* ******** */}
 
       <HeroBanner
-        sources={sources}
+        heroImage={heroImage}
         css={css`
           background-position: top right;
         `}
@@ -168,12 +148,11 @@ const IndexPage = ({ data }) => {
       <ContentBlock>
         <TextHeader size="large" mainHeader={blogSectionTitle} />
         <TriSection noCards={3} xtraWide>
-          {blogArray.map((blog, index) => (
+          {blogArray.map(blog => (
             <FeaturedBlogPost
               key={blog._id}
               blogInfo={blog}
-              // src={`blog/${blog.image_filename}.png`}
-              image={blogImageArray[index]}
+              src={`blog/${blog.image_filename}.png`}
             />
           ))}
         </TriSection>
@@ -204,33 +183,12 @@ export const profileImageFragment = graphql`
   }
 `
 
-export const mobileImageFragment = graphql`
-  fragment mobileImage on File {
-    childImageSharp {
-      fluid(maxWidth: 540, quality: 100) {
-        ...GatsbyImageSharpFluid
-      }
-    }
-  }
-`
-
 // Select Images using pagequery below.
 
 export const pageQuery = graphql`
   query {
-    mobileImage: file(relativePath: { eq: "hero/hero-brick-mob-80.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 540, quality: 100) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    desktopImage: file(relativePath: { eq: "hero/hero-brick.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 1600, quality: 100) {
-          ...GatsbyImageSharpFluid
-        }
-      }
+    projectHero: file(relativePath: { eq: "hero/hero-brick.jpg" }) {
+      ...fluidImage
     }
     profilePic: file(relativePath: { eq: "index/nikki-profile-comp.jpg" }) {
       ...profileImage
@@ -249,15 +207,6 @@ export const pageQuery = graphql`
       relativePath: { eq: "testimonials/lucy-square-300.jpg" }
     ) {
       ...fluidImage
-    }
-    blogImage1: file(relativePath: { eq: "blog/blog1.png" }) {
-      ...profileImage
-    }
-    blogImage2: file(relativePath: { eq: "blog/blog2.png" }) {
-      ...profileImage
-    }
-    blogImage3: file(relativePath: { eq: "blog/blog3.png" }) {
-      ...profileImage
     }
   }
 `
