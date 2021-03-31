@@ -80,6 +80,7 @@ const HowICanHelpPage = ({ data }) => {
         css={css`
           background-position: center bottom;
         `}
+        overlay
       >
         <div className="container align-self-start align-self-sm-center pt-3 pt-sm-0 px-2">
           <div className="row">

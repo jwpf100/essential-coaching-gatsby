@@ -100,6 +100,7 @@ const AboutMePage = ({ data }) => {
       <SEO
         title="Nikki Thomas"
         description="Learn more about Nikki Thomas, career coach, workplace psychologist and founder of Essential Coaching."
+        overlay
       />
       {/* ******** */}
       {/* Hero Banner Image */}

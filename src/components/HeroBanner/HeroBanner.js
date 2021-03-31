@@ -21,8 +21,7 @@ const Banner = ({ children, heroImage, className, overlay }) => {
         'container-fluid d-flex justify-content-center',
       ].join(' ')}
       fluid={backgroundFluidImageStack}
-      critical
-      fadeIn={false}
+      alt="A hero image"
     >
       {children}
     </BackgroundImage>
