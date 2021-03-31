@@ -78,7 +78,7 @@ const IndexPage = ({ data }) => {
 
   // Images (mobile and full size) for hero banner
 
-  const sources = [
+  /*  const sources = [
     {
       ...data.mobileImage.childImageSharp.fluid,
       media: `(max-width: 540px)`,
@@ -88,6 +88,10 @@ const IndexPage = ({ data }) => {
       media: `(min-width: 541px)`,
     },
   ]
+
+ */
+
+  const sources = data.desktopImage.childImageSharp.fluid
 
   return (
     <Layout>
@@ -104,6 +108,7 @@ const IndexPage = ({ data }) => {
         css={css`
           background-position: top right;
         `}
+        overlay
       >
         <HeroText headerText="Great Careers Start Here" xtraWide />
       </HeroBanner>

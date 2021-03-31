@@ -69,7 +69,7 @@ const HowICanHelpPage = ({ data }) => {
   ]
 
   // Images (mobile and full size) for hero banner
-
+  /*
   const sources = [
     {
       ...data.mobileImage.childImageSharp.fluid,
@@ -80,6 +80,8 @@ const HowICanHelpPage = ({ data }) => {
       media: `(min-width: 541px)`,
     },
   ]
+*/
+  const sources = data.desktopImage.childImageSharp.fluid
 
   return (
     <Layout>
@@ -92,6 +94,7 @@ const HowICanHelpPage = ({ data }) => {
         css={css`
           background-position: center bottom;
         `}
+        overlay
       >
         <div className="container align-self-start align-self-sm-center pt-3 pt-sm-0 px-2">
           <div className="row">

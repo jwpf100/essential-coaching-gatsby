@@ -96,7 +96,7 @@ const AboutMePage = ({ data }) => {
   ]
 
   // Images (mobile and full size) for hero banner
-
+  /*
   const sources = [
     {
       ...data.mobileImage.childImageSharp.fluid,
@@ -107,12 +107,16 @@ const AboutMePage = ({ data }) => {
       media: `(min-width: 541px)`,
     },
   ]
+*/
+
+  const sources = data.desktopImage.childImageSharp.fluid
 
   return (
     <Layout>
       <SEO
         title="Nikki Thomas"
         description="Learn more about Nikki Thomas, career coach, workplace psychologist and founder of Essential Coaching."
+        overlay
       />
       {/* ******** */}
       {/* Hero Banner Image */}
