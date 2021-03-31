@@ -216,14 +216,14 @@ export const pageQuery = graphql`
     mobileImage: file(relativePath: { eq: "hero/hero-brick-mob-80.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 540, quality: 100) {
-          ...GatsbyImageSharpFluid_withWebp
+          ...GatsbyImageSharpFluid
         }
       }
     }
     desktopImage: file(relativePath: { eq: "hero/hero-brick.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 1600, quality: 100) {
-          ...GatsbyImageSharpFluid_withWebp
+          ...GatsbyImageSharpFluid
         }
       }
     }
