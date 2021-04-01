@@ -25,12 +25,14 @@ import TextLead from '../components/TextAnchor'
 import SimpleIcon from '../components/SimpleIcon'
 
 const IndexPage = ({ data }) => {
-  // Define Images
+  // Define Images sourced from pageQuery
   const heroImage = data.projectHero.childImageSharp.fluid
   const profileImage = data.profilePic.childImageSharp.fluid
   const testimonialImage1 = data.testimonialImage1.childImageSharp.fluid
   const testimonialImage2 = data.testimonialImage2.childImageSharp.fluid
   const testimonialImage3 = data.testimonialImage3.childImageSharp.fluid
+
+  // Adds all text required for page
 
   const {
     headerLead,
@@ -49,6 +51,8 @@ const IndexPage = ({ data }) => {
     infoBlockArray,
     blogSectionTitle,
   } = inputData
+
+  // Blog info is bought in seperately.  This will be replaced when the blog is made dynamic.
 
   const { blogArray } = BlogInputData
 
