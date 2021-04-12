@@ -16,13 +16,17 @@ import MailChimpSignUp from './MailChimpSignUp'
 import CalendlyWidget from './CalendlyWidget'
 import ContentBlock from './ContentBlock'
 
-// Add Fonts
+// Add main font
 
 import '@fontsource/lato/400.css'
 import '@fontsource/merriweather/300.css'
+
+// Add basic icons
+
 import 'simple-line-icons/css/simple-line-icons.css'
 
 const Layout = ({ children, contact, className }) => {
+  // Contact page has a different layout
   if (!contact) {
     return (
       <>
@@ -46,6 +50,7 @@ const Layout = ({ children, contact, className }) => {
   return (
     <>
       <Global
+        // Only need 'bumpdown' to correct for navbar overlapping content at certain width
         styles={css`
           @media (max-width: 768px) {
             main {
@@ -61,6 +66,7 @@ const Layout = ({ children, contact, className }) => {
 }
 
 const StyledLayout = styled(Layout)`
+  /* Bumpdown content to account for Navbar */
   margin-top: 70px;
 `
 
