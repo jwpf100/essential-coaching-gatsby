@@ -13,6 +13,11 @@ const Banner = ({ children, heroImage, className, overlay }) => {
         `linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5))`,
       ].reverse()
 
+  const gradImage = [
+    newImageData,
+    `linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5))`,
+  ].reverse()
+
   return (
     <BackgroundImage
       Tag="section"
@@ -20,7 +25,7 @@ const Banner = ({ children, heroImage, className, overlay }) => {
         className,
         'container-fluid d-flex justify-content-center',
       ].join(' ')}
-      fluid={backgroundFluidImageStack}
+      fluid={gradImage}
       alt="A hero image"
     >
       {children}
