@@ -3,25 +3,30 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from '@emotion/styled'
+import Img from 'gatsby-image'
 
 const BlogPostImage = ({ className, image, src }) => (
-  /* <Img
+  <Img
     className={[className, 'w-75 rounded-circle mb-3 mx-auto'].join(' ')}
     fluid={image}
-  /> */
+  />
+
+  /*  
   <img
     className={[
-      'w-75 d-block rounded-circle mb-3 mx-auto border', className ].join(' ')}
+      'w-75 d-block rounded-circle mb-3 mx-auto border',
+      className,
+    ].join(' ')}
     src={`/${src}`}
     alt="Placeholder for blogpost"
   />
+*/
 )
 
 BlogPostImage.propTypes = {
   className: PropTypes.object,
   image: PropTypes.object,
   src: PropTypes.string,
-  maxWidth: 350,
 }
 
 const StyledBlogPostImage = styled(BlogPostImage)``
