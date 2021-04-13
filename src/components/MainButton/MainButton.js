@@ -4,7 +4,7 @@ import './MainButton.scss'
 import { navigate } from 'gatsby'
 import styled from '@emotion/styled'
 
-const MainButton = ({ primary, className, label, onClick, bs, small }) => {
+const MainButton = ({ primary, className, label, href, bs, small }) => {
   const mode = primary
     ? 'btn btn-outline-highlight mainbutton mx-auto d-block'
     : 'btn btn-outline-gray mx-auto d-block'
@@ -13,7 +13,9 @@ const MainButton = ({ primary, className, label, onClick, bs, small }) => {
     <button
       type="button"
       className={[mode, className, bs].join(' ')}
-      onClick={onClick}
+      onClick={() => {
+        navigate(href)
+      }}
     >
       {label}
     </button>
@@ -38,7 +40,7 @@ MainButton.propTypes = {
   /**
    * href target
    */
-  onClick: PropTypes.func,
+  href: PropTypes.string,
   /**
    * additional bootstrap classes
    */
@@ -55,6 +57,5 @@ MainButton.propTypes = {
 
 MainButton.defaultProps = {
   primary: false,
-  onClick: () => navigate('/'),
   bs: '',
 }

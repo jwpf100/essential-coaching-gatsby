@@ -132,7 +132,7 @@ const IndexPage = ({ data }) => {
           xtraWide
         >
           <TextParagraph paragraphs={aboutMeParagraphArray} />
-          <MainButton label="My Story" primary href="/aboutme/" />
+          <MainButton label="My Story" primary href="/about-me/" />
         </ContentTextImage>
       </ContentBlock>
       {/* ******** */}
@@ -172,6 +172,11 @@ const IndexPage = ({ data }) => {
             />
           ))}
         </TriSection>
+        <MainButton
+          label="Read the blog..."
+          primary
+          href="/the-essential-career-blog/"
+        />
       </ContentBlock>
     </Layout>
   )
