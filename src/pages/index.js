@@ -23,6 +23,7 @@ import TextHeader from '../components/TextHeader'
 import TextParagraph from '../components/TextParagraph'
 import TextLead from '../components/TextAnchor'
 import SimpleIcon from '../components/SimpleIcon'
+import CalendlyButton from '../components/CalendlyButton'
 
 const IndexPage = ({ data }) => {
   // Define Images
@@ -114,11 +115,7 @@ const IndexPage = ({ data }) => {
         <ContentText xtraWide>
           <TextLead mainHeader={headerLead} alignHeader="left" />
           <TextParagraph paragraphs={paragraphLeadArray} />
-          <MainButton
-            label="Book a free discovery call"
-            primary
-            href="/contact/"
-          />
+          <CalendlyButton />
         </ContentText>
       </ContentBlock>
       {/* ******** */}
@@ -132,7 +129,7 @@ const IndexPage = ({ data }) => {
           xtraWide
         >
           <TextParagraph paragraphs={aboutMeParagraphArray} />
-          <MainButton label="My Story" primary href="/aboutme/" />
+          <MainButton label="My Story" primary href="/about-me/" />
         </ContentTextImage>
       </ContentBlock>
       {/* ******** */}
@@ -172,6 +169,11 @@ const IndexPage = ({ data }) => {
             />
           ))}
         </TriSection>
+        <MainButton
+          label="Read the blog..."
+          primary
+          href="/the-essential-career-blog/"
+        />
       </ContentBlock>
     </Layout>
   )
