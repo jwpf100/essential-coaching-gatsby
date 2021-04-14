@@ -6,11 +6,11 @@ const HeroText = ({ headerText, className }) => (
   <div className="container-fluid">
     <div className={[className, 'container h-100 py-5'].join(' ')}>
       <div className={['row h-100'].join(' ')}>
-        <div className="h-100 col-12 col-sm-6 d-flex align-items-end align-items-sm-center">
+        <div className="h-100 col-12 col-md-5 col-lg-4 d-flex align-items-end align-items-md-center">
           <h1
             className={[
               className,
-              'display-3 text-uppercase text-center text-sm-start m-0',
+              'display-3 text-uppercase text-center text-md-start m-0',
             ].join(' ')}
           >
             {headerText}
@@ -25,7 +25,7 @@ const StyledHeroText = styled(HeroText)`
   h1 {
     color: white;
   }
-  @media (max-width: 541px) {
+  @media (max-width: 767px) {
      {
       /* To deal with bootstrap padding and gatsby-background-image (adding extra padding in on hero on mobile) use conditional to remove it */
     }
