@@ -58,10 +58,21 @@ const NavBar = ({ className }) => (
 )
 
 const StyledNavBar = styled(NavBar)`
-  li {
-    font-size: 1.25rem;
+  @media (max-width: 768px) {
+    li {
+      font-size: 1.25rem;
+    }
   }
-  Link
+  @media (max-width: 780px) {
+    li {
+      font-size: 1.15rem;
+    }
+  }
+  @media (min-width: 780px) {
+    li {
+      font-size: 1.25rem;
+    }
+  }
 `
 
 export default StyledNavBar

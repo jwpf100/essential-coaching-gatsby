@@ -21,7 +21,7 @@ import BlogInputData from '../pagesInput/the-essential-career-blog'
 import MainButton from '../components/MainButton'
 import TextHeader from '../components/TextHeader'
 import TextParagraph from '../components/TextParagraph'
-import TextLead from '../components/TextAnchor'
+import TextLead from '../components/TextLead'
 import SimpleIcon from '../components/SimpleIcon'
 import CalendlyButton from '../components/CalendlyButton'
 
@@ -82,11 +82,11 @@ const IndexPage = ({ data }) => {
   const sources = [
     {
       ...data.mobileImage.childImageSharp.fluid,
-      media: `(max-width: 540px)`,
+      media: `(max-width: 767px)`,
     },
     {
       ...data.desktopImage.childImageSharp.fluid,
-      media: `(min-width: 541px)`,
+      media: `(min-width: 768px)`,
     },
   ]
 
