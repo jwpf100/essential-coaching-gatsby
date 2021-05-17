@@ -6,7 +6,8 @@ const TextQuote = ({ className, paragraphs, bs }) => (
   <blockquote
     className={[
       className,
-      'quote-card d-flex align-items-center justify-content-center', bs
+      'd-flex align-items-center justify-content-center',
+      bs,
     ].join(' ')}
   >
     <p>{paragraphs}</p>
@@ -15,7 +16,6 @@ const TextQuote = ({ className, paragraphs, bs }) => (
 
 const StyledTextQuote = styled(TextQuote)`
   font-size: 1.25rem;
-
   padding-left: 50px;
   padding-right: 50px;
   position: relative;
@@ -48,7 +48,7 @@ const StyledTextQuote = styled(TextQuote)`
 
   p {
     margin: 0px;
-    padding: 0 px;
+    padding: 0px 5px 0px 5px;
   }
 `
 
@@ -63,9 +63,10 @@ TextQuote.propTypes = {
    * Set background color of container.  Use either props.color or leave blank.
    */
   paragraphs: PropTypes.array,
+  /**
+   * Set background color of container.  Use either props.color or leave blank.
+   */
+  bs: PropTypes.string,
 }
 
-TextQuote.defaultProps = {
-  className: '',
-  paragraphs: 'Example Quote Text',
-}
+TextQuote.defaultProps = {}
