@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 const HeroText = ({ headerText, className }) => (
   <div className="container-fluid">
-    <div className={[className, 'container h-100 py-5'].join(' ')}>
+    <div className={[className, 'container h-100'].join(' ')}>
       <div className={['row h-100'].join(' ')}>
         <div className="h-100 col-12 col-sm-6 d-flex align-items-end align-items-sm-center">
           <h1
@@ -33,6 +33,7 @@ const StyledHeroText = styled(HeroText)`
     padding-right: 0;
     h1 {
       color: #6c757d;
+      opacity: 0.95;
     }
   }
 `

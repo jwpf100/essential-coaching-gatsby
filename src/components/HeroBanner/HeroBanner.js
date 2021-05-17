@@ -36,7 +36,7 @@ const HeroBanner = styled(Banner)`
   background-size: cover;
   min-height: 60vh;
   @media (max-width: 541px) {
-    min-height: 50vh;
+    min-height: 60vh;
   }
 `
 
