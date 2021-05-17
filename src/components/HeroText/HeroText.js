@@ -25,7 +25,7 @@ const StyledHeroText = styled(HeroText)`
   h1 {
     color: white;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
      {
       /* To deal with bootstrap padding and gatsby-background-image (adding extra padding in on hero on mobile) use conditional to remove it */
     }
@@ -51,7 +51,4 @@ HeroText.propTypes = {
   className: PropTypes.string,
 }
 
-HeroText.defaultProps = {
-  headerText: 'HEADER PLACEHOLDER',
-  className: '',
-}
+HeroText.defaultProps = {}

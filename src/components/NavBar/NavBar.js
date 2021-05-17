@@ -84,6 +84,4 @@ NavBar.propTypes = {
   className: PropTypes.string,
 }
 
-NavBar.defaultProps = {
-  className: '',
-}
+NavBar.defaultProps = {}

@@ -33,15 +33,11 @@ TextAnchor.propTypes = {
   /**
    * Emotion classname
    */
-  to: PropTypes.string,
+  children: PropTypes.string,
   /**
    * Emotion classname
    */
-  text: PropTypes.string,
-  /**
-   * Emotion classname
-   */
-  small: PropTypes.bool,
+  href: PropTypes.string,
 }
 
 TextAnchor.defaultProps = {}
