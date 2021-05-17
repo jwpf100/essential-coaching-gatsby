@@ -34,9 +34,14 @@ const Banner = ({ children, sources, heroImage, className, overlay }) => {
 const HeroBanner = styled(Banner)`
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: 60vh;
-  @media (max-width: 541px) {
-    min-height: 50vh;
+  @media (max-width: 767px) {
+    min-height: 60vh;
+  }
+  @media (min-width: 768px) and (max-width: 992px) {
+    aspect-ratio: 12 / 9;
+  }
+  @media (min-width: 993px) {
+    min-height: 60vh;
   }
 `
 
@@ -54,7 +59,7 @@ Banner.propTypes = {
   /**
    * Button contents
    */
-  heroImage: PropTypes.object,
+  heroImage: PropTypes.bool,
   /**
    * emotion styling classes
    */
@@ -65,9 +70,4 @@ Banner.propTypes = {
   overlay: PropTypes.bool,
 }
 
-HeroBanner.defaultProps = {
-  children: '',
-  headerText: 'HEADER PLACEHOLDER',
-  heroImage: {},
-  className: '',
-}
+HeroBanner.defaultProps = {}
