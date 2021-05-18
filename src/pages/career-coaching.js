@@ -99,7 +99,7 @@ const HowICanHelpPage = ({ data }) => {
               <TextQuote paragraphs={leadQuote} bs="fst-italic" />
               <TextParagraph
                 paragraphs={`- ${leadQuoteName}, ${leadQuoteJob}`}
-                bs="text-end"
+                bs="text-end pt-5"
                 small
               />
             </div>
@@ -163,7 +163,7 @@ const HowICanHelpPage = ({ data }) => {
             label="Read more"
             primary
             onClick={() => navigate('/about-me/')}
-            href="/aboutme/"
+            href="/what-kind-of-coach-do-i-need/"
           />
         </ContentTextImage>
       </ContentBlock>

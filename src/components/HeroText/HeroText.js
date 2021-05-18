@@ -4,13 +4,13 @@ import PropTypes from 'prop-types'
 
 const HeroText = ({ headerText, className }) => (
   <div className="container-fluid">
-    <div className={[className, 'container h-100 py-5'].join(' ')}>
+    <div className={[className, 'container h-100'].join(' ')}>
       <div className={['row h-100'].join(' ')}>
-        <div className="h-100 col-12 col-md-5 col-lg-4 d-flex align-items-end align-items-md-center">
+        <div className="h-100 col-12 col-md-4 d-flex align-items-end align-items-md-center">
           <h1
             className={[
               className,
-              'display-3 text-uppercase text-center text-md-start m-0',
+              'display-3 text-uppercase text-start m-0',
             ].join(' ')}
           >
             {headerText}
@@ -33,6 +33,7 @@ const StyledHeroText = styled(HeroText)`
     padding-right: 0;
     h1 {
       color: #6c757d;
+      opacity: 0.95;
     }
   }
 `
@@ -50,7 +51,4 @@ HeroText.propTypes = {
   className: PropTypes.string,
 }
 
-HeroText.defaultProps = {
-  headerText: 'HEADER PLACEHOLDER',
-  className: '',
-}
+HeroText.defaultProps = {}

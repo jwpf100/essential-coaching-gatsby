@@ -3,7 +3,7 @@ module.exports = {
     title: `Essential Coaching`,
     description: `Essential Coaching - Great Careers Start Here!`,
     author: `joseph.fletcher100@gmail.com`,
-    siteUrl: `https://dev.jwpf100-test-domain.com/`,
+    siteUrl: `https://essentialcoaching.co.uk/`,
     keywords: [
       'Career Coaching',
       'Life Coaching',

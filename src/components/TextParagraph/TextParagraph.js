@@ -47,7 +47,4 @@ TextParagraph.propTypes = {
   bs: PropTypes.string,
 }
 
-TextParagraph.defaultProps = {
-  className: '',
-  bs: '',
-}
+TextParagraph.defaultProps = {}
