@@ -163,7 +163,7 @@ const HowICanHelpPage = ({ data }) => {
             label="Read more"
             primary
             onClick={() => navigate('/about-me/')}
-            href="/aboutme/"
+            href="/what-kind-of-coach-do-i-need/"
           />
         </ContentTextImage>
       </ContentBlock>
