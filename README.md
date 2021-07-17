@@ -10,9 +10,9 @@ A small business website, designed to provide information, contact details and b
 
 ## Project Status
 
-In progress. Project started to take a site I'd developed using Bootstrap, Express, Ejs, and hosted on Heroku and convert it to a static site, hosted on Amazon S3 with the aim of speeding up the experience, and reducing the monthly cost to host.
+Live.  An updated version of Essential Coaching taking a site I'd developed using Bootstrap, Express, Ejs, and hosted on Heroku and converting it to a static site, hosted on Amazon S3 with the aim of speeding up the experience, and reducing the monthly cost to host.
 
-Currently the MVP is finished, and after some optimising this will take over the site currently live at https://www.essentialcoaching.co.uk/.
+Currently live at https://www.essentialcoaching.co.uk/.
 
 ## Project Screen Shots
 
@@ -36,4 +36,7 @@ To Visit App:
 
 ## Reflection
 
-TBC
+A significant upgrade on the original site, despite everything looking pretty similar.  There has been a noticable improvement in performance.  The original site had a lighthouse score in the low 60s, which has been improved to a score of 91, with perfect accessability and SEO scores.  
+Changing the site to a component oriented style has made it much easier to style the site consistently, and reusing code made it much quicker to create than the original version.  
+The performance score can be improved further and there are various elements that can be optimised in Gatsby 3.0, primarily the images. 
+Next actions will be to improve the blog page, possibly by adding a headless CMS to enable the site owner to update content.
