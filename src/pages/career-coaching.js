@@ -17,6 +17,7 @@ import TextList from '../components/TextList'
 import TextCardGroup from '../components/TextCardGroup'
 import MainButton from '../components/MainButton'
 import TextQuote from '../components/TextQuote'
+import CalendlyButton from '../components/CalendlyButton'
 
 import inputData from '../pagesInput/career-coaching'
 import ContentIconList from '../components/ContentIconList'
@@ -113,6 +114,8 @@ const HowICanHelpPage = ({ data }) => {
         <ContentText xtraWide>
           <TextHeader mainHeader={leadMainHeader} />
           <TextParagraph paragraphs={leadParagraphs} />
+          <CalendlyButton />
+          <TextParagraph paragraphs="" />
           <TextParagraph paragraphs={iconListIntro} />
         </ContentText>
         <ContentSpacer bs="pb-3 pb-lg-5" />
