@@ -19,9 +19,10 @@ const BlogHomePage = ({ data }) => {
   const blogImage1 = data.blogImage1.childImageSharp.fluid
   const blogImage2 = data.blogImage2.childImageSharp.fluid
   const blogImage3 = data.blogImage3.childImageSharp.fluid
+  const blogImage4 = data.blogImage3.childImageSharp.fluid
 
   const imageUrl = 'images/blog/'
-  const blogImageArray = [blogImage1, blogImage2, blogImage3]
+  const blogImageArray = [blogImage1, blogImage2, blogImage3, blogImage4]
 
   // Arrange items by date - most recent first
   const sortPostsMostRecent = array =>
@@ -103,13 +104,16 @@ export const pageQuery = graphql`
     projectHero: file(relativePath: { eq: "hero/shoots.jpg" }) {
       ...fluidImage
     }
-    blogImage1: file(relativePath: { eq: "blog/blog1.png" }) {
+    blogImage2: file(relativePath: { eq: "blog/blog1.png" }) {
       ...blogImageMain
     }
-    blogImage2: file(relativePath: { eq: "blog/blog2.png" }) {
+    blogImage3: file(relativePath: { eq: "blog/blog2.png" }) {
       ...blogImageMain
     }
-    blogImage3: file(relativePath: { eq: "blog/blog3.png" }) {
+    blogImage4: file(relativePath: { eq: "blog/blog3.png" }) {
+      ...blogImageMain
+    }
+    blogImage1: file(relativePath: { eq: "blog/blogwebinar.png" }) {
       ...blogImageMain
     }
   }
