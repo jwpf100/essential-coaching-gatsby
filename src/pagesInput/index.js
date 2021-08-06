@@ -1,8 +1,8 @@
 const inputData = {
   headerLead: 'Coaching for people who want to create a career they love.',
   paragraphLeadArray: [
-    'How often do you give yourself the time and space to evaluate your career? Perhaps you’re faced with a few options for where you could go next and need help deciding on the next challenge. Perhaps you want to get promoted but need a focused plan to get there. Perhaps you’ve got a great idea for a side hustle but haven’t had the confidence to go for it.',
-    'I can help you understand yourself better, get clear on where you want to go next and put your plan into action through practical, impactful coaching.',
+    'How often do you give yourself the time and space to evaluate your career? Perhaps you’re faced with a few options for where you could go next and need help deciding on the next challenge. Perhaps you want to get promoted but need a focused plan to get there. Perhaps you’ve got a great idea for a new business but haven’t had the confidence to go for it.',
+    'I can help you unpack your challenge, get clear on where you want to go next and put your plan into action through practical, impactful coaching.',
   ],
   aboutMeParagraphArray: [
     "I’m Nikki Thomas - I'm a career coach and a workplace psychologist, having spent many years supporting organisations and individuals through periods of change.",
