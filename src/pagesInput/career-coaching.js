@@ -1,16 +1,16 @@
 const inputData = {
   leadMainHeader: 'How I can help',
   leadParagraphs: [
-    'My three-step programme will help you make the most of your talents and unique skills. Whether you’re working for an organisation, running your own gig or you’re in transition, I will draw on my behavioural change expertise to help you kickstart your journey to a happier, more fulfilled career.',
-    "If you're ready to make a change, contact me at nikki@essentialcoaching.co.uk to arrange your 30-minute complimentary call to explore how I can help you, or keep scrolling to learn more about what I do.",
+    'Whether you’re working for an organisation, running your own business or you’re in transition, I will draw on my behavioural change expertise to help you kickstart your journey to a happier, more fulfilled career.',
+    "If you're ready to make a change, book your 30-minute free discovery call to explore how I can help you, or keep scrolling to learn more about what I do.",
   ],
   leadQuote: [
-    'Nikki’s coaching was great; so useful in making me think more critically about my decisions/actions for the future.',
+    'Nikki’s coaching was so useful in helping me unpick complex problems and navigate a path forwards.',
   ],
-  leadQuoteName: 'Jess',
-  leadQuoteJob: 'Nutritionist',
+  leadQuoteName: 'Lara',
+  leadQuoteJob: 'Client Director',
   iconListIntro: [
-    'Each of my clients is unique and has differing requirements but broadly, we work through the following stages:',
+    'Everyone I work with is unique and has differing requirements but broadly, we work through the following stages:',
   ],
   icon1: 'icon-question',
   iconListItemTitle1: '1 - Discover',
@@ -30,16 +30,16 @@ const inputData = {
   ],
   includedListHeader: "What's included",
   includedListIntro: [
-    'Whilst each coaching programme is personalised and tailored to you, it will typically include:',
+    'Whilst each coaching package is personalised and tailored to you, it will typically include:',
   ],
   includedListItems: [
-    'A package of 6 one-to-one, action-oriented 1-hour coaching sessions, with the flexibility to add more sessions as required.',
+    'One-to-one, action-oriented 1-hour coaching sessions, with the flexibility to add more sessions as required.',
     'A unique, valuable blend of coaching, psychology and behavioural change insight.',
     'Clear goal setting and measurement of progress against these.',
     'Structured insight into your strengths and values, which will act as your guiding light for any decisions you make.',
     'Resources and exercises to accelerate your progress.',
     'Accountability to build positive habits and achieve your goals.',
-    'A summary email of key points after each coaching session.',
+    'An audio recording of coaching sessions.',
     'Email/WhatsApp support between coaching sessions.',
   ],
   typeOfCoachHeader: 'What kind of coach am I?',

@@ -160,7 +160,7 @@ const IndexPage = ({ data }) => {
       <ContentBlock>
         <TextHeader size="large" mainHeader={blogSectionTitle} />
         <TriSection noCards={3} xtraWide>
-          {blogArray.map((blog, index) => (
+          {blogArray.slice(0, 3).map((blog, index) => (
             <FeaturedBlogPost
               key={blog._id}
               blogInfo={blog}
@@ -247,13 +247,13 @@ export const pageQuery = graphql`
     ) {
       ...fluidImage
     }
-    blogImage1: file(relativePath: { eq: "blog/blog1.png" }) {
+    blogImage1: file(relativePath: { eq: "blog/blogwebinar.png" }) {
       ...profileImage
     }
-    blogImage2: file(relativePath: { eq: "blog/blog2.png" }) {
+    blogImage2: file(relativePath: { eq: "blog/blog1.png" }) {
       ...profileImage
     }
-    blogImage3: file(relativePath: { eq: "blog/blog3.png" }) {
+    blogImage3: file(relativePath: { eq: "blog/blog2.png" }) {
       ...profileImage
     }
   }

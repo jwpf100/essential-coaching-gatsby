@@ -12,7 +12,7 @@ import TextLink from '../components/TextLink'
 import SEO from '../components/seo'
 
 const { blogArray } = inputData
-const blogPostNo = 1
+const blogPostNo = 2
 const blog = blogArray[blogPostNo]
 
 const BlogFirstPage = () => {

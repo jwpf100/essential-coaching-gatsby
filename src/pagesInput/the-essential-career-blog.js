@@ -1,6 +1,32 @@
 const inputData = {
   blogArray: [
     {
+      link: 'future-proof-your-skills',
+      post_date: '2021-08-06T12:53:12.237Z',
+      tags: [
+        { _id: '600af596f3ac8621ebb6abe7', name: 'Career', __v: 0 },
+        { _id: '600af596f3ac8621ebb6abe8', name: 'Webinar', __v: 0 },
+      ],
+      status: 'Published',
+      _id: '600ec07f8c0f342c652df630',
+      title: 'Future Proof Your Skills!',
+      author: {
+        _id: '600af5b8f3ac8621ebb6abea',
+        first_name: 'Nikki',
+        family_name: 'Thomas',
+        date_of_birth: '1985-04-30T00:00:00.000Z',
+        date_of_death: null,
+        __v: 0,
+      },
+      summary:
+        'Join Nikki Thomas, career coach and business psychologist, for a practical and interactive tour of three key themes for the not-so-future world of work: adaptability, a growth mindset and ‘experiments’.',
+      body:
+        '<p>Join Nikki Thomas, career coach and business psychologist, for a practical and interactive tour of three key themes for the not-so-future world of work: adaptability, a growth mindset and ‘experiments’.</p><p>You’ll get tips on how to shake up how you learn, sidestep cognitive biases, boost your mindset towards growth and nudge yourself into long-lasting change. We are seeing unparalleled change in the way we work, where we work and the skills we need to succeed.</p><p>What will you do to prime yourself for the future?</p>',
+      body_delta: '',
+      image_filename: 'blogwebinar',
+      __v: 0,
+    },
+    {
       link: 'what-exactly-is-career-coaching',
       post_date: '2021-01-25T12:53:12.237Z',
       tags: [{ _id: '600af596f3ac8621ebb6abe7', name: 'Career', __v: 0 }],
